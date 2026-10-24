@@ -1,0 +1,252 @@
+/* Quizz — optional GitHub sync (one JSON file per device in the repo). */
+(() => {
+  const DEVICE_KEY = "quizz-device-id";
+  const TOKEN_KEY = "quizz-sync-token";
+  const LAST_ERROR_KEY = "quizz-sync-last-error";
+  const BUILD = "sync-2026-10-24a";
+  const config = window.QUIZZ_SYNC_CONFIG || { enabled: false };
+
+  let enabled = false;
+  let owner = "";
+  let repo = "";
+  let branch = "main";
+  let deviceId = null;
+
+  function normalizeToken(token) {
+    return String(token || "").replace(/\s+/g, "").trim();
+  }
+
+  function getToken() {
+    return normalizeToken(config.token || localStorage.getItem(TOKEN_KEY) || "");
+  }
+
+  function setToken(token) {
+    const t = normalizeToken(token);
+    if (t) localStorage.setItem(TOKEN_KEY, t);
+    else localStorage.removeItem(TOKEN_KEY);
+  }
+
+  function clearToken() {
+    localStorage.removeItem(TOKEN_KEY);
+    setLastError("");
+  }
+
+  function hasToken() {
+    return !!getToken();
+  }
+
+  function setLastError(msg) {
+    if (msg) localStorage.setItem(LAST_ERROR_KEY, String(msg).slice(0, 500));
+    else localStorage.removeItem(LAST_ERROR_KEY);
+  }
+
+  function getLastError() {
+    return localStorage.getItem(LAST_ERROR_KEY) || "";
+  }
+
+  function parseRepo(slug) {
+    const parts = String(slug || "").trim().split("/");
+    if (parts.length !== 2 || !parts[0] || !parts[1]) return null;
+    return { owner: parts[0], repo: parts[1] };
+  }
+
+  function getDeviceId() {
+    if (deviceId) return deviceId;
+    let id = localStorage.getItem(DEVICE_KEY);
+    if (!id) {
+      id =
+        typeof crypto !== "undefined" && crypto.randomUUID
+          ? crypto.randomUUID()
+          : `d-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+      localStorage.setItem(DEVICE_KEY, id);
+    }
+    deviceId = id;
+    return id;
+  }
+
+  function contentTs(payload) {
+    return payload?.settings?.contentUpdatedAt || payload?.exportedAt || "";
+  }
+
+  function dataPath(file) {
+    const base = String(config.dataPath || "data/devices").replace(/\/$/, "");
+    return `${base}/${file}`;
+  }
+
+  function rawUrl(path) {
+    return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
+  }
+
+  function authHeaders(headers = {}) {
+    const out = { ...headers };
+    const token = getToken();
+    if (token) out.Authorization = `Bearer ${token}`;
+    return out;
+  }
+
+  async function ghFetch(path, options = {}) {
+    const headers = authHeaders({
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28",
+      ...(options.headers || {}),
+    });
+    const res = await fetch(`https://api.github.com${path}`, { ...options, headers });
+    if (!res.ok) {
+      let detail = "";
+      try {
+        detail = await res.text();
+      } catch {
+        /* ignore */
+      }
+      const err = new Error(`GitHub ${res.status}${detail ? `: ${detail.slice(0, 240)}` : ""}`);
+      err.status = res.status;
+      throw err;
+    }
+    return res;
+  }
+
+  function toBase64(text) {
+    const bytes = new TextEncoder().encode(text);
+    let binary = "";
+    bytes.forEach((b) => {
+      binary += String.fromCharCode(b);
+    });
+    return btoa(binary);
+  }
+
+  async function readText(path) {
+    if (getToken()) {
+      try {
+        const res = await ghFetch(
+          `/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`,
+        );
+        const json = await res.json();
+        if (json.encoding === "base64" && json.content) {
+          const bin = atob(json.content.replace(/\n/g, ""));
+          const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+          return new TextDecoder().decode(bytes);
+        }
+      } catch (err) {
+        if (err.status !== 404) throw err;
+      }
+    }
+    const res = await fetch(rawUrl(path), { cache: "no-store" });
+    if (!res.ok) {
+      const err = new Error(`read ${res.status}`);
+      err.status = res.status;
+      throw err;
+    }
+    return res.text();
+  }
+
+  async function readMeta(path) {
+    const res = await ghFetch(
+      `/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`,
+    );
+    return res.json();
+  }
+
+  async function writeText(path, text, message) {
+    if (!getToken()) throw new Error("Jeton sync manquant.");
+    let sha;
+    try {
+      sha = (await readMeta(path)).sha;
+    } catch (err) {
+      if (err.status !== 404) throw err;
+    }
+    const body = {
+      message,
+      content: toBase64(text),
+      branch,
+    };
+    if (sha) body.sha = sha;
+    await ghFetch(`/repos/${owner}/${repo}/contents/${path}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  }
+
+  async function readManifest() {
+    try {
+      return JSON.parse(await readText(dataPath("manifest.json")));
+    } catch (err) {
+      if (err.status === 404) return { devices: [], updatedAt: null };
+      throw err;
+    }
+  }
+
+  async function updateManifest(id) {
+    const manifest = await readManifest();
+    const devices = new Set(manifest.devices || []);
+    devices.add(id);
+    const next = {
+      devices: [...devices],
+      updatedAt: new Date().toISOString(),
+    };
+    await writeText(
+      dataPath("manifest.json"),
+      `${JSON.stringify(next, null, 2)}\n`,
+      "quizz: update device manifest",
+    );
+  }
+
+  function init() {
+    const parsed = parseRepo(config.repo);
+    if (!config.enabled || !parsed) return false;
+    owner = parsed.owner;
+    repo = parsed.repo;
+    branch = config.branch || "main";
+    enabled = true;
+    getDeviceId();
+    return true;
+  }
+
+  async function push(payload) {
+    if (!enabled) throw new Error("Sync Git non initialisé.");
+    if (!getToken()) throw new Error("Jeton sync manquant.");
+    const id = getDeviceId();
+    const body = {
+      ...payload,
+      deviceId: id,
+      kind: "quizz-backup",
+    };
+    const text = `${JSON.stringify(body, null, 2)}\n`;
+    if (text.length > 900000) {
+      throw new Error(`Sauvegarde trop volumineuse pour l'API GitHub.`);
+    }
+    await writeText(dataPath(`${id}.json`), text, `quizz: sync device ${id.slice(0, 8)}`);
+    await updateManifest(id);
+    setLastError("");
+    return { deviceId: id };
+  }
+
+  async function testWrite() {
+    if (!enabled) throw new Error("Sync Git non initialisé.");
+    if (!getToken()) throw new Error("Jeton sync manquant.");
+    const stamp = new Date().toISOString();
+    await writeText(
+      dataPath(".sync-test.json"),
+      `${JSON.stringify({ ok: true, at: stamp, build: BUILD }, null, 2)}\n`,
+      "quizz: sync connectivity test",
+    );
+    setLastError("");
+    return stamp;
+  }
+
+  window.QuizzSync = {
+    init,
+    push,
+    testWrite,
+    isEnabled: () => enabled,
+    canWrite: () => enabled && hasToken(),
+    hasToken,
+    setToken,
+    clearToken,
+    getDeviceId,
+    getBuild: () => BUILD,
+    getLastError,
+    setLastError,
+    contentTs,
+  };
+})();

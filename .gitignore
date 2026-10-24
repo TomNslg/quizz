@@ -1,0 +1,4 @@
+.DS_Store
+*.log
+sync-config.local.js
+node_modules/
