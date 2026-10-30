@@ -4,28 +4,79 @@
     ? window.QUIZZ_COUNTRIES.slice().sort((a, b) => a.order - b.order)
     : [];
 
-  const QUIZ_DEFS = [
-    { id: "capital-fwd", group: "Capitales", title: "Pays → capitale", mode: "qa", field: "capital", direction: "fwd" },
-    { id: "capital-rev", group: "Capitales", title: "Capitale → pays", mode: "qa", field: "capital", direction: "rev" },
-    { id: "iso3-fwd", group: "ISO 3", title: "Pays → ISO 3", mode: "qa", field: "iso3", direction: "fwd" },
-    { id: "iso3-rev", group: "ISO 3", title: "ISO 3 → pays", mode: "qa", field: "iso3", direction: "rev" },
-    { id: "iso2-fwd", group: "ISO 2", title: "Pays → ISO 2", mode: "qa", field: "iso2", direction: "fwd" },
-    { id: "iso2-rev", group: "ISO 2", title: "ISO 2 → pays", mode: "qa", field: "iso2", direction: "rev" },
-    { id: "indicatif-fwd", group: "Indicatifs", title: "Pays → indicatif", mode: "qa", field: "indicatif", direction: "fwd", phonePad: true },
-    { id: "indicatif-rev", group: "Indicatifs", title: "Indicatif → pays", mode: "qa", field: "indicatif", direction: "rev" },
-    { id: "currency-fwd", group: "Devises", title: "Pays → devise", mode: "qa", field: "currency", direction: "fwd" },
-    { id: "currency-rev", group: "Devises", title: "Devise → pays", mode: "qa", field: "currency", direction: "rev" },
-    { id: "memory-countries", group: "Mémoire", title: "Tous les pays", mode: "memory", field: "name" },
-    { id: "memory-capitals", group: "Mémoire", title: "Toutes les capitales", mode: "memory", field: "capital" },
+  const DIMS = [
+    { id: "name", label: "Pays" },
+    { id: "capital", label: "Capitale" },
+    { id: "iso2", label: "ISO 2" },
+    { id: "iso3", label: "ISO 3" },
+    { id: "indicatif", label: "Indicatif" },
+    { id: "currency", label: "Devise" },
   ];
 
-  const FIELD_LABELS = {
-    capital: { promptFwd: "Capitale", promptRev: "Pays" },
-    iso3: { promptFwd: "ISO 3", promptRev: "Pays" },
-    iso2: { promptFwd: "ISO 2", promptRev: "Pays" },
-    indicatif: { promptFwd: "Indicatif", promptRev: "Pays" },
-    currency: { promptFwd: "Devise", promptRev: "Pays" },
-  };
+  const MEMORY_DIMS = [
+    { id: "name", label: "Pays" },
+    { id: "capital", label: "Capitales" },
+  ];
+
+  function dimLabel(id) {
+    return DIMS.find((d) => d.id === id)?.label || id;
+  }
+
+  function makeQaDef(from, to) {
+    return {
+      id: `qa-${from}-${to}`,
+      mode: "qa",
+      from,
+      to,
+      title: `${dimLabel(from)} → ${dimLabel(to)}`,
+      phonePad: to === "indicatif",
+    };
+  }
+
+  function makeMemoryDef(field) {
+    return {
+      id: `memory-${field}`,
+      mode: "memory",
+      field,
+      title: field === "name" ? "Tous les pays" : "Toutes les capitales",
+    };
+  }
+
+  function resolveDef(id) {
+    if (!id) return null;
+    if (id.startsWith("memory-")) {
+      const field = id.slice(7);
+      if (MEMORY_DIMS.some((d) => d.id === field)) return makeMemoryDef(field);
+    }
+    if (id.startsWith("qa-")) {
+      const rest = id.slice(3);
+      for (const from of DIMS) {
+        const prefix = `${from.id}-`;
+        if (rest.startsWith(prefix)) {
+          const to = rest.slice(prefix.length);
+          if (DIMS.some((d) => d.id === to) && to !== from.id) return makeQaDef(from.id, to);
+        }
+      }
+    }
+    const legacy = {
+      "capital-fwd": ["name", "capital"],
+      "capital-rev": ["capital", "name"],
+      "iso3-fwd": ["name", "iso3"],
+      "iso3-rev": ["iso3", "name"],
+      "iso2-fwd": ["name", "iso2"],
+      "iso2-rev": ["iso2", "name"],
+      "indicatif-fwd": ["name", "indicatif"],
+      "indicatif-rev": ["indicatif", "name"],
+      "currency-fwd": ["name", "currency"],
+      "currency-rev": ["currency", "name"],
+      "memory-countries": null,
+      "memory-capitals": null,
+    };
+    if (id === "memory-countries") return makeMemoryDef("name");
+    if (id === "memory-capitals") return makeMemoryDef("capital");
+    if (legacy[id]) return makeQaDef(legacy[id][0], legacy[id][1]);
+    return null;
+  }
 
   const COUNTRY_SHORT = {
     "États-Unis": ["usa", "us", "etats unis", "america"],
@@ -87,6 +138,9 @@
     tokenStatus: "",
     tokenOk: null,
     timerHandle: null,
+    pickFrom: "name",
+    pickTo: "capital",
+    pickMemory: "name",
   };
 
   function fold(str) {
@@ -178,11 +232,37 @@
     return c[field] || null;
   }
 
+  function hasDim(c, dim) {
+    const v = fieldValue(c, dim);
+    return v != null && String(v).trim() !== "" && String(v) !== "—";
+  }
+
   function poolForQuiz(def) {
-    return COUNTRIES.filter((c) => {
-      const v = fieldValue(c, def.field);
-      return v != null && String(v).trim() !== "" && String(v) !== "—";
-    });
+    if (def.mode === "memory") {
+      return COUNTRIES.filter((c) => hasDim(c, def.field));
+    }
+    return COUNTRIES.filter((c) => hasDim(c, def.from) && hasDim(c, def.to));
+  }
+
+  function displayDim(c, dim) {
+    if (dim === "indicatif") return `+${c.indicatif}`;
+    return String(fieldValue(c, dim) || "");
+  }
+
+  function answerMatches(dim, country, raw) {
+    if (dim === "name") return matchesCountryName(raw, country);
+    if (dim === "capital") return matchesCapital(raw, country);
+    if (dim === "indicatif") return matchesIndicatif(raw, country.indicatif);
+    if (dim === "iso2" || dim === "iso3" || dim === "currency") {
+      return matchesCode(raw, country[dim]);
+    }
+    return false;
+  }
+
+  function promptMatches(dim, country, promptValue) {
+    const v = fieldValue(country, dim);
+    if (dim === "indicatif") return matchesIndicatif(v, promptValue);
+    return softKey(v) === softKey(promptValue);
   }
 
   function shuffle(arr) {
@@ -213,30 +293,14 @@
   }
 
   function checkAnswer(def, item, raw) {
-    const c = item.country;
-    if (def.direction === "fwd") {
-      if (def.field === "indicatif") return matchesIndicatif(raw, c.indicatif);
-      if (def.field === "capital") return matchesCapital(raw, c);
-      if (def.field === "iso2" || def.field === "iso3" || def.field === "currency") {
-        return matchesCode(raw, c[def.field]);
-      }
-      return false;
-    }
-    const promptVal = item.promptValue;
-    const candidates = poolForQuiz(def).filter((x) => {
-      if (def.field === "indicatif") return matchesIndicatif(x.indicatif, promptVal);
-      return softKey(x[def.field]) === softKey(promptVal);
-    });
-    return candidates.some((x) => matchesCountryName(raw, x));
+    const candidates = poolForQuiz(def).filter((x) =>
+      promptMatches(def.from, x, item.promptValue),
+    );
+    return candidates.some((x) => answerMatches(def.to, x, raw));
   }
 
   function expectedDisplay(def, item) {
-    const c = item.country;
-    if (def.direction === "fwd") {
-      if (def.field === "indicatif") return `+${c.indicatif}`;
-      return String(c[def.field] || "");
-    }
-    return c.name;
+    return displayDim(item.country, def.to);
   }
 
   function itemKey(item) {
@@ -343,19 +407,12 @@
   }
 
   function buildQaItems(def, countries) {
-    return countries.map((country) => {
-      let promptValue;
-      let promptText;
-      if (def.direction === "fwd") {
-        promptValue = country.name;
-        promptText = country.name;
-      } else {
-        promptValue = country[def.field];
-        promptText =
-          def.field === "indicatif" ? `+${country.indicatif}` : String(promptValue);
-      }
-      return { country, promptValue, promptText, wasWrong: false };
-    });
+    return countries.map((country) => ({
+      country,
+      promptValue: fieldValue(country, def.from),
+      promptText: displayDim(country, def.from),
+      wasWrong: false,
+    }));
   }
 
   function startQaSession(def, opts = {}) {
@@ -417,14 +474,44 @@
   }
 
   function startQuiz(id, opts = {}) {
-    const def = QUIZ_DEFS.find((q) => q.id === id);
+    const def = resolveDef(id);
     if (!def) return;
     stopTimerTick();
-    state.quizId = id;
+    state.quizId = def.id;
     state.session =
       def.mode === "memory" ? startMemorySession(def) : startQaSession(def, opts);
     state.view = def.mode === "memory" ? "memory" : "quiz";
     render();
+  }
+
+  function loadHomePicks() {
+    const s = loadDb().settings || {};
+    if (DIMS.some((d) => d.id === s.pickFrom)) state.pickFrom = s.pickFrom;
+    if (DIMS.some((d) => d.id === s.pickTo)) state.pickTo = s.pickTo;
+    if (MEMORY_DIMS.some((d) => d.id === s.pickMemory)) state.pickMemory = s.pickMemory;
+    if (state.pickFrom === state.pickTo) {
+      state.pickTo = DIMS.find((d) => d.id !== state.pickFrom)?.id || "capital";
+    }
+  }
+
+  function saveHomePicks() {
+    const db = loadDb();
+    db.settings = {
+      ...(db.settings || {}),
+      pickFrom: state.pickFrom,
+      pickTo: state.pickTo,
+      pickMemory: state.pickMemory,
+    };
+    saveDb(db);
+  }
+
+  function selectOptions(selected, dims) {
+    return dims
+      .map(
+        (d) =>
+          `<option value="${escapeHtml(d.id)}"${d.id === selected ? " selected" : ""}>${escapeHtml(d.label)}</option>`,
+      )
+      .join("");
   }
 
   const app = document.getElementById("app");
@@ -462,61 +549,109 @@
 
   function renderHome() {
     stopTimerTick();
-    const db = loadDb();
-    const groups = [];
-    let last = null;
-    for (const q of QUIZ_DEFS) {
-      if (q.group !== last) {
-        groups.push({ name: q.group, items: [] });
-        last = q.group;
-      }
-      groups[groups.length - 1].items.push(q);
-    }
-
+    loadHomePicks();
     const syncOn = window.QuizzSync?.isEnabled();
     const hasTok = window.QuizzSync?.hasToken();
+    const qaId = `qa-${state.pickFrom}-${state.pickTo}`;
+    const sc = getScore(qaId);
+    const pending = Array.isArray(sc.pendingIds) ? sc.pendingIds.length : 0;
+    const metaParts = [];
+    if (sc.bestMs != null) metaParts.push(`meilleur ${formatMs(sc.bestMs)}`);
+    if (pending) metaParts.push(`${pending} à revoir`);
 
-    const root = el(`<div class="anim-rise"></div>`);
+    const root = el(`<div></div>`);
     root.innerHTML = `
       <header>
         <h1 class="brand">Quizz</h1>
-        <p class="tagline">Pays et codes</p>
       </header>
-      <div class="quiz-list"></div>
+
+      <section class="home-card">
+        <div class="picker-row">
+          <label class="picker">
+            <span class="picker-label">De</span>
+            <select data-from>${selectOptions(state.pickFrom, DIMS)}</select>
+          </label>
+          <span class="picker-arrow" aria-hidden="true">→</span>
+          <label class="picker">
+            <span class="picker-label">Vers</span>
+            <select data-to>${selectOptions(state.pickTo, DIMS)}</select>
+          </label>
+        </div>
+        <button type="button" class="btn btn-primary btn-go" data-start-qa>Go</button>
+        <p class="picker-meta">${escapeHtml(metaParts.join(" · "))}</p>
+      </section>
+
+      <section class="home-card memory-card">
+        <div class="memory-row">
+          <div class="memory-title">Mémorise-les tous</div>
+          <label class="picker memory-picker">
+            <select data-memory>${selectOptions(state.pickMemory, MEMORY_DIMS)}</select>
+          </label>
+          <button type="button" class="btn btn-secondary btn-memory" data-start-memory>Go</button>
+        </div>
+      </section>
+
       <div class="home-foot">
         <button type="button" class="ghost-btn" data-go="token">
           ${hasTok ? "Modifier le jeton" : "Jeton sync"}
         </button>
-        <p class="sync-pill">${syncOn && !hasTok ? "Optionnel — pour synchroniser entre appareils." : ""}</p>
+        <p class="sync-pill">${syncOn && !hasTok ? "Optionnel — sync entre appareils." : ""}</p>
       </div>
     `;
 
-    const list = root.querySelector(".quiz-list");
-    for (const g of groups) {
-      list.appendChild(el(`<div class="section-label">${escapeHtml(g.name)}</div>`));
-      for (const q of g.items) {
-        const sc = db.scores[q.id] || {};
-        const pending = Array.isArray(sc.pendingIds) ? sc.pendingIds.length : 0;
-        const parts = [];
-        if (sc.bestMs != null) parts.push(`record ${formatMs(sc.bestMs)}`);
-        if (pending && q.mode === "qa") parts.push(`${pending} à revoir`);
-        const sub = parts.length ? parts.join(" · ") : q.group;
-        const btn = el(`
-          <button type="button" class="quiz-link" data-quiz="${escapeHtml(q.id)}">
-            <span class="meta">
-              <p class="title">${escapeHtml(q.title)}</p>
-              <p class="sub">${escapeHtml(sub)}</p>
-            </span>
-            <span class="chev" aria-hidden="true">›</span>
-          </button>
-        `);
-        list.appendChild(btn);
-      }
+    const fromSel = root.querySelector("[data-from]");
+    const toSel = root.querySelector("[data-to]");
+    const memSel = root.querySelector("[data-memory]");
+
+    function refreshMeta() {
+      const id = `qa-${state.pickFrom}-${state.pickTo}`;
+      const score = getScore(id);
+      const p = Array.isArray(score.pendingIds) ? score.pendingIds.length : 0;
+      const parts = [];
+      if (score.bestMs != null) parts.push(`meilleur ${formatMs(score.bestMs)}`);
+      if (p) parts.push(`${p} à revoir`);
+      root.querySelector(".picker-meta").textContent = parts.join(" · ");
     }
 
-    root.querySelectorAll("[data-quiz]").forEach((btn) => {
-      btn.addEventListener("click", () => startQuiz(btn.getAttribute("data-quiz")));
+    function syncToOptions() {
+      const from = fromSel.value;
+      const keep = toSel.value;
+      const opts = DIMS.filter((d) => d.id !== from);
+      const next = opts.some((d) => d.id === keep) ? keep : opts[0]?.id;
+      toSel.innerHTML = selectOptions(next, opts);
+      state.pickFrom = from;
+      state.pickTo = next;
+      saveHomePicks();
+      refreshMeta();
+    }
+
+    fromSel.addEventListener("change", syncToOptions);
+    toSel.addEventListener("change", () => {
+      state.pickTo = toSel.value;
+      saveHomePicks();
+      refreshMeta();
     });
+    memSel.addEventListener("change", () => {
+      state.pickMemory = memSel.value;
+      saveHomePicks();
+    });
+
+    syncToOptions();
+
+    root.querySelector("[data-start-qa]").addEventListener("click", () => {
+      state.pickFrom = fromSel.value;
+      state.pickTo = toSel.value;
+      saveHomePicks();
+      if (state.pickFrom === state.pickTo) return;
+      startQuiz(`qa-${state.pickFrom}-${state.pickTo}`);
+    });
+
+    root.querySelector("[data-start-memory]").addEventListener("click", () => {
+      state.pickMemory = memSel.value;
+      saveHomePicks();
+      startQuiz(`memory-${state.pickMemory}`);
+    });
+
     root.querySelector("[data-go=token]").addEventListener("click", () => {
       state.view = "token";
       state.tokenDraft = "";
@@ -706,8 +841,7 @@
     }
 
     const item = session.items[session.index];
-    const labels = FIELD_LABELS[def.field];
-    const promptLabel = def.direction === "fwd" ? labels.promptFwd : labels.promptRev;
+    const promptLabel = dimLabel(def.from);
     const pct = Math.round((session.index / session.items.length) * 100);
     const inputClass = session.answered
       ? session.feedback.ok
@@ -715,17 +849,17 @@
         : "bad anim-shake"
       : "";
 
-    const root = el(`<div class="anim-rise"></div>`);
+    const root = el(`<div></div>`);
     root.innerHTML = `
       <div class="top">
         <button type="button" class="back" data-back aria-label="Retour">←</button>
-        <h1 class="view-title">${escapeHtml(def.group)}</h1>
+        <h1 class="view-title">${escapeHtml(def.title)}</h1>
         <span class="spacer"></span>
         <span class="timer-chip" data-timer>${escapeHtml(liveTimerText(session))}</span>
       </div>
       ${
         session.retryMode
-          ? `<p class="retry-banner">Mode erreurs · ${session.items.length} question${session.items.length > 1 ? "s" : ""}</p>`
+          ? `<p class="retry-banner">${session.items.length} erreur${session.items.length > 1 ? "s" : ""}</p>`
           : ""
       }
       <div class="progress-bar"><i style="width:${pct}%"></i></div>
@@ -781,12 +915,12 @@
       });
     } else {
       const autocapitalize =
-        def.direction === "rev" || def.field === "capital" ? "words" : "characters";
+        def.to === "name" || def.to === "capital" ? "words" : "characters";
       const input = el(
         `<input class="answer-input ${inputClass}" type="text" enterkeyhint="done"
           autocomplete="off" autocorrect="off" spellcheck="false"
           autocapitalize="${autocapitalize}"
-          placeholder="Votre réponse" data-input />`,
+          placeholder="${escapeHtml(dimLabel(def.to))}" data-input />`,
       );
       input.value = session.input;
       input.disabled = session.answered;
