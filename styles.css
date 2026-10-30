@@ -253,6 +253,46 @@ button {
   color: var(--muted);
   margin-bottom: 20px;
 }
+
+.timer-chip {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(12, 59, 74, 0.08);
+  color: var(--ink);
+  min-width: 3.6em;
+  text-align: center;
+}
+
+.retry-banner {
+  margin: -6px 0 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(224, 122, 61, 0.14);
+  color: var(--cta-ink);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.score-time,
+.score-best,
+.score-pending {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+.score-pending { color: var(--ink-soft); font-weight: 600; }
+
+.btn-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.btn-stack .btn { width: 100%; }
 .prompt-block {
   margin-bottom: 22px;
 }
