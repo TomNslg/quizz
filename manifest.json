@@ -3,8 +3,8 @@
   "short_name": "Quizz",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#dce6ea",
-  "theme_color": "#0c3b4a",
+  "background_color": "#f6f6f6",
+  "theme_color": "#1a1a1a",
   "lang": "fr",
   "icons": [
     {

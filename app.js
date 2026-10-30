@@ -5,124 +5,28 @@
     : [];
 
   const QUIZ_DEFS = [
-    {
-      id: "capital-fwd",
-      group: "Capitales",
-      title: "Pays → capitale",
-      glyph: "Ca",
-      mode: "qa",
-      field: "capital",
-      direction: "fwd",
-    },
-    {
-      id: "capital-rev",
-      group: "Capitales",
-      title: "Capitale → pays",
-      glyph: "Ca",
-      mode: "qa",
-      field: "capital",
-      direction: "rev",
-    },
-    {
-      id: "iso3-fwd",
-      group: "Code ISO3",
-      title: "Pays → code 3 lettres",
-      glyph: "3L",
-      mode: "qa",
-      field: "iso3",
-      direction: "fwd",
-    },
-    {
-      id: "iso3-rev",
-      group: "Code ISO3",
-      title: "Code 3 lettres → pays",
-      glyph: "3L",
-      mode: "qa",
-      field: "iso3",
-      direction: "rev",
-    },
-    {
-      id: "iso2-fwd",
-      group: "Code ISO2",
-      title: "Pays → code 2 lettres",
-      glyph: "2L",
-      mode: "qa",
-      field: "iso2",
-      direction: "fwd",
-    },
-    {
-      id: "iso2-rev",
-      group: "Code ISO2",
-      title: "Code 2 lettres → pays",
-      glyph: "2L",
-      mode: "qa",
-      field: "iso2",
-      direction: "rev",
-    },
-    {
-      id: "indicatif-fwd",
-      group: "Indicatif",
-      title: "Pays → indicatif",
-      glyph: "+#",
-      mode: "qa",
-      field: "indicatif",
-      direction: "fwd",
-      phonePad: true,
-    },
-    {
-      id: "indicatif-rev",
-      group: "Indicatif",
-      title: "Indicatif → pays",
-      glyph: "+#",
-      mode: "qa",
-      field: "indicatif",
-      direction: "rev",
-    },
-    {
-      id: "currency-fwd",
-      group: "Devise",
-      title: "Pays → code devise",
-      glyph: "$",
-      mode: "qa",
-      field: "currency",
-      direction: "fwd",
-    },
-    {
-      id: "currency-rev",
-      group: "Devise",
-      title: "Code devise → pays",
-      glyph: "$",
-      mode: "qa",
-      field: "currency",
-      direction: "rev",
-    },
-    {
-      id: "memory-countries",
-      group: "Mémoire",
-      title: "Tous les pays",
-      glyph: "∑",
-      mode: "memory",
-      field: "name",
-    },
-    {
-      id: "memory-capitals",
-      group: "Mémoire",
-      title: "Toutes les capitales",
-      glyph: "∑",
-      mode: "memory",
-      field: "capital",
-    },
+    { id: "capital-fwd", group: "Capitales", title: "Pays → capitale", mode: "qa", field: "capital", direction: "fwd" },
+    { id: "capital-rev", group: "Capitales", title: "Capitale → pays", mode: "qa", field: "capital", direction: "rev" },
+    { id: "iso3-fwd", group: "ISO 3", title: "Pays → ISO 3", mode: "qa", field: "iso3", direction: "fwd" },
+    { id: "iso3-rev", group: "ISO 3", title: "ISO 3 → pays", mode: "qa", field: "iso3", direction: "rev" },
+    { id: "iso2-fwd", group: "ISO 2", title: "Pays → ISO 2", mode: "qa", field: "iso2", direction: "fwd" },
+    { id: "iso2-rev", group: "ISO 2", title: "ISO 2 → pays", mode: "qa", field: "iso2", direction: "rev" },
+    { id: "indicatif-fwd", group: "Indicatifs", title: "Pays → indicatif", mode: "qa", field: "indicatif", direction: "fwd", phonePad: true },
+    { id: "indicatif-rev", group: "Indicatifs", title: "Indicatif → pays", mode: "qa", field: "indicatif", direction: "rev" },
+    { id: "currency-fwd", group: "Devises", title: "Pays → devise", mode: "qa", field: "currency", direction: "fwd" },
+    { id: "currency-rev", group: "Devises", title: "Devise → pays", mode: "qa", field: "currency", direction: "rev" },
+    { id: "memory-countries", group: "Mémoire", title: "Tous les pays", mode: "memory", field: "name" },
+    { id: "memory-capitals", group: "Mémoire", title: "Toutes les capitales", mode: "memory", field: "capital" },
   ];
 
   const FIELD_LABELS = {
-    capital: { promptFwd: "Capitale de", promptRev: "Pays dont la capitale est" },
-    iso3: { promptFwd: "Code ISO3 de", promptRev: "Pays du code ISO3" },
-    iso2: { promptFwd: "Code ISO2 de", promptRev: "Pays du code ISO2" },
-    indicatif: { promptFwd: "Indicatif de", promptRev: "Pays de l'indicatif" },
-    currency: { promptFwd: "Code devise de", promptRev: "Pays du code devise" },
+    capital: { promptFwd: "Capitale", promptRev: "Pays" },
+    iso3: { promptFwd: "ISO 3", promptRev: "Pays" },
+    iso2: { promptFwd: "ISO 2", promptRev: "Pays" },
+    indicatif: { promptFwd: "Indicatif", promptRev: "Pays" },
+    currency: { promptFwd: "Devise", promptRev: "Pays" },
   };
 
-  /** Extra short names accepted for countries (after softKey). */
   const COUNTRY_SHORT = {
     "États-Unis": ["usa", "us", "etats unis", "america"],
     "Royaume-Uni": ["uk", "gb", "angleterre", "grande bretagne"],
@@ -185,8 +89,6 @@
     timerHandle: null,
   };
 
-  /* —— Normalize / match —— */
-
   function fold(str) {
     return String(str || "")
       .normalize("NFD")
@@ -196,7 +98,6 @@
       .replace(/ß/g, "ss");
   }
 
-  /** Strip accents, spaces, hyphens, apostrophes for tolerant compare. */
   function softKey(str) {
     return fold(str)
       .toLowerCase()
@@ -232,14 +133,12 @@
     return prev[m];
   }
 
-  /** Max edit distance allowed for a given string length. */
   function typoBudget(len) {
     if (len <= 2) return 0;
     if (len === 3) return 1;
     return 2;
   }
 
-  /** Drop common leading geographic words for abbreviation matching. */
   function stripLeadNoise(key) {
     return key.replace(
       /^(republique|royaume|etats|etat|iles|ile|saint|sainte|federation|democratique|rd)+/g,
@@ -256,9 +155,7 @@
     const budget = Math.min(typoBudget(a.length), typoBudget(b.length));
     if (budget > 0 && levenshtein(a, b) <= budget) return true;
 
-    // Abbreviation: typed form is a long-enough contiguous piece of the full name
     if (a.length >= 4 && (b.includes(a) || stripLeadNoise(b).includes(a))) return true;
-    // Or typed form is a prefix of the full name (sao tome → sao tome et principe)
     if (a.length >= 4 && (b.startsWith(a) || stripLeadNoise(b).startsWith(a))) return true;
 
     return false;
@@ -308,19 +205,13 @@
   }
 
   function matchesCode(input, expected) {
-    const a = softKey(input);
-    const b = softKey(expected);
-    if (!a || !b) return false;
-    if (a === b) return true;
-    const budget = Math.min(typoBudget(a.length), typoBudget(b.length));
-    return budget > 0 && levenshtein(a, b) <= budget;
+    return softKey(input) === softKey(expected);
   }
 
   function matchesIndicatif(input, expected) {
     return digitsOnly(input) === digitsOnly(expected);
   }
 
-  /** Accept answer for a QA item. */
   function checkAnswer(def, item, raw) {
     const c = item.country;
     if (def.direction === "fwd") {
@@ -351,8 +242,6 @@
   function itemKey(item) {
     return item.country?.id || `${item.promptValue}`;
   }
-
-  /* —— Persistence —— */
 
   function loadDb() {
     try {
@@ -432,11 +321,9 @@
       bestMs: prev.bestMs || null,
     };
 
-    // Best time: perfect run of a full series (not a retry-of-errors round)
     if (perfect && !session.retryMode) {
       if (next.bestMs == null || ms < next.bestMs) next.bestMs = ms;
     }
-    // Also track best time clearing an error round
     if (perfect && session.retryMode) {
       if (prev.bestRetryMs == null || ms < prev.bestRetryMs) next.bestRetryMs = ms;
       else next.bestRetryMs = prev.bestRetryMs;
@@ -454,8 +341,6 @@
     db.scores[quizId] = { ...prev, pendingIds: [] };
     saveDb(db);
   }
-
-  /* —— Session builders —— */
 
   function buildQaItems(def, countries) {
     return countries.map((country) => {
@@ -542,8 +427,6 @@
     render();
   }
 
-  /* —— DOM helpers —— */
-
   const app = document.getElementById("app");
 
   function el(html) {
@@ -577,8 +460,6 @@
     }, 250);
   }
 
-  /* —— Views —— */
-
   function renderHome() {
     stopTimerTick();
     const db = loadDb();
@@ -598,21 +479,15 @@
     const root = el(`<div class="anim-rise"></div>`);
     root.innerHTML = `
       <header>
-        <h1 class="brand">Qu<span>izz</span></h1>
-        <p class="tagline">Pays, capitales, codes et indicatifs — depuis n’importe quel téléphone.</p>
+        <h1 class="brand">Quizz</h1>
+        <p class="tagline">Pays et codes</p>
       </header>
       <div class="quiz-list"></div>
       <div class="home-foot">
         <button type="button" class="ghost-btn" data-go="token">
-          ${hasTok ? "Jeton sync enregistré — modifier" : "Configurer le jeton sync (appareils)"}
+          ${hasTok ? "Modifier le jeton" : "Jeton sync"}
         </button>
-        <p class="sync-pill">${
-          syncOn
-            ? hasTok
-              ? "Sync GitHub active sur cet appareil."
-              : "Entrez un jeton fine-grained pour synchroniser la progression."
-            : ""
-        }</p>
+        <p class="sync-pill">${syncOn && !hasTok ? "Optionnel — pour synchroniser entre appareils." : ""}</p>
       </div>
     `;
 
@@ -625,14 +500,12 @@
         const parts = [];
         if (sc.bestMs != null) parts.push(`record ${formatMs(sc.bestMs)}`);
         if (pending && q.mode === "qa") parts.push(`${pending} à revoir`);
-        else if (sc.bestCorrect != null) parts.push(`meilleur ${sc.bestCorrect}/${sc.bestTotal || "—"}`);
-        const sub = parts.length ? ` · ${parts.join(" · ")}` : "";
+        const sub = parts.length ? parts.join(" · ") : q.group;
         const btn = el(`
           <button type="button" class="quiz-link" data-quiz="${escapeHtml(q.id)}">
-            <span class="glyph">${escapeHtml(q.glyph)}</span>
             <span class="meta">
               <p class="title">${escapeHtml(q.title)}</p>
-              <p class="sub">${escapeHtml(q.group)}${escapeHtml(sub)}</p>
+              <p class="sub">${escapeHtml(sub)}</p>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
@@ -664,8 +537,8 @@
         <h1 class="view-title">Jeton sync</h1>
       </div>
       <div class="panel">
-        <h2>Fine-grained PAT</h2>
-        <p>Comme Snapszli : un jeton limité au dépôt <strong>TomNslg/quizz</strong> avec permission Contents en lecture/écriture. Stocké uniquement dans le localStorage de l’appareil.</p>
+        <h2>Jeton GitHub</h2>
+        <p>Jeton fine-grained limité à <strong>TomNslg/quizz</strong>, permission Contents en lecture/écriture. Stocké dans le localStorage de l’appareil.</p>
         <input class="token-input" type="password" autocomplete="off" spellcheck="false"
           placeholder="github_pat_…" data-token />
         <div class="btn-row">
@@ -753,7 +626,6 @@
     session.done = true;
     session.endedAt = Date.now();
     stopTimerTick();
-    // If some answers were correct after being listed as missed earlier in this pass, keep only still-wrong
     session.missedKeys = session.items.filter((it) => it.wasWrong).map(itemKey);
     recordSessionResult(session);
   }
@@ -935,7 +807,6 @@
     }
 
     root.querySelector("[data-back]").addEventListener("click", () => {
-      // Leaving mid-series: keep existing pending; don't overwrite with partial
       stopTimerTick();
       state.view = "home";
       state.session = null;
@@ -1132,10 +1003,9 @@
     else if (state.view === "memory") renderMemory();
   }
 
-  /* —— Boot —— */
   if (window.QuizzSync) window.QuizzSync.init();
   if (!COUNTRIES.length) {
-    app.innerHTML = `<p class="tagline">Données pays manquantes.</p>`;
+    app.innerHTML = `<p class="tagline">Données manquantes.</p>`;
     return;
   }
   render();
