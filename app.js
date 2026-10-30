@@ -571,13 +571,12 @@
             <span class="picker-label">De</span>
             <select data-from>${selectOptions(state.pickFrom, DIMS)}</select>
           </label>
-          <span class="picker-arrow" aria-hidden="true">→</span>
           <label class="picker">
-            <span class="picker-label">Vers</span>
+            <span class="picker-label">&nbsp;</span>
             <select data-to>${selectOptions(state.pickTo, DIMS)}</select>
           </label>
+          <button type="button" class="btn btn-primary btn-go" data-start-qa>Go</button>
         </div>
-        <button type="button" class="btn btn-primary btn-go" data-start-qa>Go</button>
         <p class="picker-meta">${escapeHtml(metaParts.join(" · "))}</p>
       </section>
 
