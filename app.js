@@ -149,7 +149,6 @@
     Jerusalem: ["jerusalem"],
     "Sri Jayawardenepura Kotte": ["kotte", "sri jayawardenepura", "jayawardenepura"],
     Colombo: ["colombo"],
-    Stanley: ["port stanley"],
   };
 
   const state = {
