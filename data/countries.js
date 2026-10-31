@@ -6,8 +6,7 @@ window.QUIZZ_COUNTRIES = [
     "altNames": [
       "États-Unis",
       "USA",
-      "Etats-Unis",
-      "United States"
+      "Etats-Unis"
     ],
     "iso2": "US",
     "iso3": "USA",
@@ -550,9 +549,11 @@ window.QUIZZ_COUNTRIES = [
   {
     "id": "CI-225",
     "order": 36,
-    "name": "Ivory Coast",
+    "name": "Côte d'Ivoire",
     "altNames": [
-      "Côte d'Ivoire"
+      "Ivory Coast",
+      "Cote d'Ivoire",
+      "Côte-d’Ivoire"
     ],
     "iso2": "CI",
     "iso3": "CIV",
@@ -735,10 +736,11 @@ window.QUIZZ_COUNTRIES = [
   {
     "id": "CV-238",
     "order": 49,
-    "name": "Cape Verde",
+    "name": "Cabo Verde",
     "altNames": [
+      "Cape Verde",
       "Cap-Vert",
-      "Cabo Verde"
+      "Cap Vert"
     ],
     "iso2": "CV",
     "iso3": "CPV",
@@ -1636,8 +1638,7 @@ window.QUIZZ_COUNTRIES = [
     "name": "Belarus",
     "altNames": [
       "Biélorussie",
-      "Bélarus",
-      "Belarus"
+      "Bélarus"
     ],
     "iso2": "BY",
     "iso3": "BLR",
@@ -1831,8 +1832,7 @@ window.QUIZZ_COUNTRIES = [
     "name": "North Macedonia",
     "altNames": [
       "Macédoine du Nord",
-      "Macédoine",
-      "Macédoine du nord"
+      "Macédoine"
     ],
     "iso2": "MK",
     "iso3": "MKD",
@@ -1894,9 +1894,12 @@ window.QUIZZ_COUNTRIES = [
   {
     "id": "CZ-420",
     "order": 125,
-    "name": "Czech Republic",
+    "name": "Czechia",
     "altNames": [
-      "République tchèque"
+      "Czech Republic",
+      "République tchèque",
+      "Tcheque",
+      "Tchéquie"
     ],
     "iso2": "CZ",
     "iso3": "CZE",
@@ -2724,11 +2727,12 @@ window.QUIZZ_COUNTRIES = [
   {
     "id": "TL-670",
     "order": 180,
-    "name": "East Timor",
+    "name": "Timor-Leste",
     "altNames": [
+      "East Timor",
       "Timor oriental",
-      "Timor-Leste",
-      "Timor-Oriental"
+      "Timor-Oriental",
+      "Timor Leste"
     ],
     "iso2": "TL",
     "iso3": "TLS",
@@ -3075,7 +3079,6 @@ window.QUIZZ_COUNTRIES = [
     "name": "South Korea",
     "altNames": [
       "Corée du Sud",
-      "Corée du sud",
       "Sud-Corée"
     ],
     "iso2": "KR",
@@ -3108,8 +3111,7 @@ window.QUIZZ_COUNTRIES = [
     "order": 206,
     "name": "North Korea",
     "altNames": [
-      "Corée du Nord",
-      "Corée du nord"
+      "Corée du Nord"
     ],
     "iso2": "KP",
     "iso3": "PRK",
@@ -3223,9 +3225,11 @@ window.QUIZZ_COUNTRIES = [
   {
     "id": "TR-90",
     "order": 214,
-    "name": "Turkey",
+    "name": "Türkiye",
     "altNames": [
-      "Turquie"
+      "Turkey",
+      "Turquie",
+      "Turkiye"
     ],
     "iso2": "TR",
     "iso3": "TUR",
@@ -3295,7 +3299,7 @@ window.QUIZZ_COUNTRIES = [
     "name": "Myanmar",
     "altNames": [
       "Birmanie",
-      "Myanmar"
+      "Burma"
     ],
     "iso2": "MM",
     "iso3": "MMR",
