@@ -174,6 +174,7 @@
     return fold(str)
       .toLowerCase()
       .replace(/[''`´’‘]/g, "")
+      .replace(/[()]/g, "")
       .replace(/[-–—_/.,]/g, "")
       .replace(/\s+/g, "");
   }

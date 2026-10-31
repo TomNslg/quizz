@@ -186,8 +186,12 @@ window.QUIZZ_COUNTRIES = [
     "altNames": [],
     "iso2": "MS",
     "iso3": "MSR",
-    "capital": "Brades",
-    "altCapitals": [],
+    "capital": "Plymouth (de jure)",
+    "altCapitals": [
+      "Plymouth",
+      "Brades",
+      "Brades (de facto)"
+    ],
     "indicatif": "1664",
     "currency": "XCD",
     "currencyName": "Dollar"
@@ -1208,7 +1212,9 @@ window.QUIZZ_COUNTRIES = [
       "Cape Town",
       "Bloemfontein",
       "Le Cap",
-      "Pretoria"
+      "Pretoria (administrative)",
+      "Cape Town (legislative)",
+      "Bloemfontein (judicial)"
     ],
     "indicatif": "27",
     "currency": "ZAR",
@@ -2460,7 +2466,11 @@ window.QUIZZ_COUNTRIES = [
     "iso2": "BO",
     "iso3": "BOL",
     "capital": "La Paz",
-    "altCapitals": [],
+    "altCapitals": [
+      "Sucre",
+      "Sucre (de jure)",
+      "La Paz (de facto)"
+    ],
     "indicatif": "591",
     "currency": "BOB",
     "currencyName": "Boliviano bolivien"
@@ -2763,8 +2773,10 @@ window.QUIZZ_COUNTRIES = [
     "altNames": [],
     "iso2": "NR",
     "iso3": "NRU",
-    "capital": null,
-    "altCapitals": [],
+    "capital": "Yaren (de facto)",
+    "altCapitals": [
+      "Yaren"
+    ],
     "indicatif": "674",
     "currency": "AUD",
     "currencyName": "Dollar"
