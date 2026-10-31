@@ -1,5 +1,5 @@
 /* Quizz — offline shell (cache app assets; progress stays in localStorage). */
-const CACHE = "quizz-shell-v11";
+const CACHE = "quizz-shell-v12";
 const PRECACHE = [
   "./",
   "./index.html",

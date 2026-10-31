@@ -2153,7 +2153,9 @@ window.QUIZZ_COUNTRIES = [
     "iso2": "FK",
     "iso3": "FLK",
     "capital": "Stanley",
-    "altCapitals": [],
+    "altCapitals": [
+      "Port Stanley"
+    ],
     "indicatif": "500",
     "currency": "FKP",
     "currencyName": "Livre des îles Malouines"
