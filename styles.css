@@ -324,6 +324,27 @@ button {
   gap: 8px;
   margin-top: 8px;
 }
+.btn-skip {
+  width: 100%;
+  flex: 1;
+}
+.quiz-screen {
+  position: relative;
+  min-height: calc(100dvh - 40px);
+  padding-bottom: calc(88px + var(--safe-b));
+}
+.next-dock {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + var(--safe-b));
+  z-index: 5;
+}
+.btn-next {
+  min-width: 96px;
+  min-height: 52px;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
 .btn {
   flex: 1;
   min-height: 46px;

@@ -2,8 +2,9 @@
   {
     "id": "US-1",
     "order": 0,
-    "name": "États-Unis",
+    "name": "United States",
     "altNames": [
+      "États-Unis",
       "USA",
       "Etats-Unis",
       "United States"
@@ -48,8 +49,10 @@
   {
     "id": "BB-1246",
     "order": 3,
-    "name": "Barbade",
-    "altNames": [],
+    "name": "Barbados",
+    "altNames": [
+      "Barbade"
+    ],
     "iso2": "BB",
     "iso3": "BRB",
     "capital": "Bridgetown",
@@ -74,8 +77,10 @@
   {
     "id": "AG-1268",
     "order": 5,
-    "name": "Antigua-et-Barbuda",
-    "altNames": [],
+    "name": "Antigua and Barbuda",
+    "altNames": [
+      "Antigua-et-Barbuda"
+    ],
     "iso2": "AG",
     "iso3": "ATG",
     "capital": "Saint John's",
@@ -87,8 +92,10 @@
   {
     "id": "VG-1284",
     "order": 6,
-    "name": "Îles Vierges britanniques",
-    "altNames": [],
+    "name": "British Virgin Islands",
+    "altNames": [
+      "Îles Vierges britanniques"
+    ],
     "iso2": "VG",
     "iso3": "VGB",
     "capital": "Road Town",
@@ -100,8 +107,10 @@
   {
     "id": "VI-1340",
     "order": 7,
-    "name": "Îles Vierges des États-Unis",
-    "altNames": [],
+    "name": "United States Virgin Islands",
+    "altNames": [
+      "Îles Vierges des États-Unis"
+    ],
     "iso2": "VI",
     "iso3": "VIR",
     "capital": "Charlotte-Amalie",
@@ -113,8 +122,10 @@
   {
     "id": "KY-1345",
     "order": 8,
-    "name": "Îles Caïmans",
-    "altNames": [],
+    "name": "Cayman Islands",
+    "altNames": [
+      "Îles Caïmans"
+    ],
     "iso2": "KY",
     "iso3": "CYM",
     "capital": "George Town",
@@ -126,8 +137,10 @@
   {
     "id": "BM-1441",
     "order": 9,
-    "name": "Bermudes",
-    "altNames": [],
+    "name": "Bermuda",
+    "altNames": [
+      "Bermudes"
+    ],
     "iso2": "BM",
     "iso3": "BMU",
     "capital": "Hamilton",
@@ -139,8 +152,10 @@
   {
     "id": "GD-1473",
     "order": 10,
-    "name": "Grenade",
-    "altNames": [],
+    "name": "Grenada",
+    "altNames": [
+      "Grenade"
+    ],
     "iso2": "GD",
     "iso3": "GRD",
     "capital": "Saint George's",
@@ -152,8 +167,10 @@
   {
     "id": "TC-1649",
     "order": 11,
-    "name": "Îles Turques-et-Caïques",
-    "altNames": [],
+    "name": "Turks and Caicos Islands",
+    "altNames": [
+      "Îles Turques-et-Caïques"
+    ],
     "iso2": "TC",
     "iso3": "TCA",
     "capital": "Cockburn Town",
@@ -178,8 +195,10 @@
   {
     "id": "MP-1670",
     "order": 13,
-    "name": "Îles Mariannes du Nord",
-    "altNames": [],
+    "name": "Northern Mariana Islands",
+    "altNames": [
+      "Îles Mariannes du Nord"
+    ],
     "iso2": "MP",
     "iso3": "MNP",
     "capital": "Saipan",
@@ -204,8 +223,10 @@
   {
     "id": "AS-1684",
     "order": 15,
-    "name": "Samoa américaines",
-    "altNames": [],
+    "name": "American Samoa",
+    "altNames": [
+      "Samoa américaines"
+    ],
     "iso2": "AS",
     "iso3": "ASM",
     "capital": "Pago Pago",
@@ -230,8 +251,10 @@
   {
     "id": "LC-1758",
     "order": 17,
-    "name": "Sainte-Lucie",
-    "altNames": [],
+    "name": "Saint Lucia",
+    "altNames": [
+      "Sainte-Lucie"
+    ],
     "iso2": "LC",
     "iso3": "LCA",
     "capital": "Castries",
@@ -243,8 +266,10 @@
   {
     "id": "DM-1767",
     "order": 18,
-    "name": "Dominique",
-    "altNames": [],
+    "name": "Dominica",
+    "altNames": [
+      "Dominique"
+    ],
     "iso2": "DM",
     "iso3": "DMA",
     "capital": "Roseau",
@@ -256,8 +281,9 @@
   {
     "id": "VC-1784",
     "order": 19,
-    "name": "Saint-Vincent-et-Grenadines",
+    "name": "Saint Vincent and the Grenadines",
     "altNames": [
+      "Saint-Vincent-et-Grenadines",
       "Saint-Vincent-et-les-Grenadines"
     ],
     "iso2": "VC",
@@ -271,8 +297,10 @@
   {
     "id": "PR-1787",
     "order": 20,
-    "name": "Porto Rico",
-    "altNames": [],
+    "name": "Puerto Rico",
+    "altNames": [
+      "Porto Rico"
+    ],
     "iso2": "PR",
     "iso3": "PRI",
     "capital": "San Juan",
@@ -284,12 +312,16 @@
   {
     "id": "DO-1809",
     "order": 21,
-    "name": "République dominicaine",
-    "altNames": [],
+    "name": "Dominican Republic",
+    "altNames": [
+      "République dominicaine"
+    ],
     "iso2": "DO",
     "iso3": "DOM",
-    "capital": "Saint-Domingue",
-    "altCapitals": [],
+    "capital": "Santo Domingo",
+    "altCapitals": [
+      "Saint-Domingue"
+    ],
     "indicatif": "1809",
     "currency": "DOP",
     "currencyName": "Peso dominicain"
@@ -297,12 +329,16 @@
   {
     "id": "TT-1868",
     "order": 22,
-    "name": "Trinité-et-Tobago",
-    "altNames": [],
+    "name": "Trinidad and Tobago",
+    "altNames": [
+      "Trinité-et-Tobago"
+    ],
     "iso2": "TT",
     "iso3": "TTO",
-    "capital": "Port-d'Espagne",
-    "altCapitals": [],
+    "capital": "Port of Spain",
+    "altCapitals": [
+      "Port-d'Espagne"
+    ],
     "indicatif": "1868",
     "currency": "TTD",
     "currencyName": "Dollar de Trinité-et-Tobago"
@@ -310,8 +346,9 @@
   {
     "id": "KN-1869",
     "order": 23,
-    "name": "Saint-Kitts-et-Nevis",
+    "name": "Saint Kitts and Nevis",
     "altNames": [
+      "Saint-Kitts-et-Nevis",
       "Saint-Christophe-et-Niévès"
     ],
     "iso2": "KN",
@@ -325,8 +362,10 @@
   {
     "id": "JM-1876",
     "order": 24,
-    "name": "Jamaïque",
-    "altNames": [],
+    "name": "Jamaica",
+    "altNames": [
+      "Jamaïque"
+    ],
     "iso2": "JM",
     "iso3": "JAM",
     "capital": "Kingston",
@@ -338,12 +377,16 @@
   {
     "id": "EG-20",
     "order": 25,
-    "name": "Égypte",
-    "altNames": [],
+    "name": "Egypt",
+    "altNames": [
+      "Égypte"
+    ],
     "iso2": "EG",
     "iso3": "EGY",
-    "capital": "Le Caire",
-    "altCapitals": [],
+    "capital": "Cairo",
+    "altCapitals": [
+      "Le Caire"
+    ],
     "indicatif": "20",
     "currency": "EGP",
     "currencyName": "Livre égyptienne"
@@ -351,12 +394,16 @@
   {
     "id": "SS-211",
     "order": 26,
-    "name": "Soudan du Sud",
-    "altNames": [],
+    "name": "South Sudan",
+    "altNames": [
+      "Soudan du Sud"
+    ],
     "iso2": "SS",
     "iso3": "SSD",
-    "capital": "Jouba",
-    "altCapitals": [],
+    "capital": "Juba",
+    "altCapitals": [
+      "Jouba"
+    ],
     "indicatif": "211",
     "currency": "SSP",
     "currencyName": "Livre sud-soudanaise"
@@ -364,8 +411,10 @@
   {
     "id": "MA-212",
     "order": 27,
-    "name": "Maroc",
-    "altNames": [],
+    "name": "Morocco",
+    "altNames": [
+      "Maroc"
+    ],
     "iso2": "MA",
     "iso3": "MAR",
     "capital": "Rabat",
@@ -377,12 +426,16 @@
   {
     "id": "DZ-213",
     "order": 28,
-    "name": "Algérie",
-    "altNames": [],
+    "name": "Algeria",
+    "altNames": [
+      "Algérie"
+    ],
     "iso2": "DZ",
     "iso3": "DZA",
-    "capital": "Alger",
-    "altCapitals": [],
+    "capital": "Algiers",
+    "altCapitals": [
+      "Alger"
+    ],
     "indicatif": "213",
     "currency": "DZD",
     "currencyName": "Dinar algérien"
@@ -390,8 +443,10 @@
   {
     "id": "TN-216",
     "order": 29,
-    "name": "Tunisie",
-    "altNames": [],
+    "name": "Tunisia",
+    "altNames": [
+      "Tunisie"
+    ],
     "iso2": "TN",
     "iso3": "TUN",
     "capital": "Tunis",
@@ -403,8 +458,10 @@
   {
     "id": "LY-218",
     "order": 30,
-    "name": "Libye",
-    "altNames": [],
+    "name": "Libya",
+    "altNames": [
+      "Libye"
+    ],
     "iso2": "LY",
     "iso3": "LBY",
     "capital": "Tripoli",
@@ -416,8 +473,10 @@
   {
     "id": "GM-220",
     "order": 31,
-    "name": "Gambie",
-    "altNames": [],
+    "name": "Gambia",
+    "altNames": [
+      "Gambie"
+    ],
     "iso2": "GM",
     "iso3": "GMB",
     "capital": "Banjul",
@@ -429,8 +488,10 @@
   {
     "id": "SN-221",
     "order": 32,
-    "name": "Sénégal",
-    "altNames": [],
+    "name": "Senegal",
+    "altNames": [
+      "Sénégal"
+    ],
     "iso2": "SN",
     "iso3": "SEN",
     "capital": "Dakar",
@@ -442,8 +503,10 @@
   {
     "id": "MR-222",
     "order": 33,
-    "name": "Mauritanie",
-    "altNames": [],
+    "name": "Mauritania",
+    "altNames": [
+      "Mauritanie"
+    ],
     "iso2": "MR",
     "iso3": "MRT",
     "capital": "Nouakchott",
@@ -468,8 +531,10 @@
   {
     "id": "GN-224",
     "order": 35,
-    "name": "Guinée",
-    "altNames": [],
+    "name": "Guinea",
+    "altNames": [
+      "Guinée"
+    ],
     "iso2": "GN",
     "iso3": "GIN",
     "capital": "Conakry",
@@ -481,8 +546,10 @@
   {
     "id": "CI-225",
     "order": 36,
-    "name": "Côte d'Ivoire",
-    "altNames": [],
+    "name": "Ivory Coast",
+    "altNames": [
+      "Côte d'Ivoire"
+    ],
     "iso2": "CI",
     "iso3": "CIV",
     "capital": "Yamoussoukro",
@@ -533,8 +600,10 @@
   {
     "id": "BJ-229",
     "order": 40,
-    "name": "Bénin",
-    "altNames": [],
+    "name": "Benin",
+    "altNames": [
+      "Bénin"
+    ],
     "iso2": "BJ",
     "iso3": "BEN",
     "capital": "Porto-Novo",
@@ -546,12 +615,16 @@
   {
     "id": "MU-230",
     "order": 41,
-    "name": "Île Maurice",
-    "altNames": [],
+    "name": "Mauritius",
+    "altNames": [
+      "Île Maurice"
+    ],
     "iso2": "MU",
     "iso3": "MUS",
-    "capital": "Port-Louis",
-    "altCapitals": [],
+    "capital": "Port Louis",
+    "altCapitals": [
+      "Port-Louis"
+    ],
     "indicatif": "230",
     "currency": "MUR",
     "currencyName": "Roupie mauricienne"
@@ -559,8 +632,10 @@
   {
     "id": "LR-231",
     "order": 42,
-    "name": "Libéria",
-    "altNames": [],
+    "name": "Liberia",
+    "altNames": [
+      "Libéria"
+    ],
     "iso2": "LR",
     "iso3": "LBR",
     "capital": "Monrovia",
@@ -611,8 +686,10 @@
   {
     "id": "TD-235",
     "order": 46,
-    "name": "Tchad",
-    "altNames": [],
+    "name": "Chad",
+    "altNames": [
+      "Tchad"
+    ],
     "iso2": "TD",
     "iso3": "TCD",
     "capital": "N'Djamena",
@@ -624,8 +701,10 @@
   {
     "id": "CF-236",
     "order": 47,
-    "name": "République centrafricaine",
-    "altNames": [],
+    "name": "Central African Republic",
+    "altNames": [
+      "République centrafricaine"
+    ],
     "iso2": "CF",
     "iso3": "CAF",
     "capital": "Bangui",
@@ -637,8 +716,10 @@
   {
     "id": "CM-237",
     "order": 48,
-    "name": "Cameroun",
-    "altNames": [],
+    "name": "Cameroon",
+    "altNames": [
+      "Cameroun"
+    ],
     "iso2": "CM",
     "iso3": "CMR",
     "capital": "Yaoundé",
@@ -650,8 +731,9 @@
   {
     "id": "CV-238",
     "order": 49,
-    "name": "Cap-Vert",
+    "name": "Cape Verde",
     "altNames": [
+      "Cap-Vert",
       "Cabo Verde"
     ],
     "iso2": "CV",
@@ -665,8 +747,10 @@
   {
     "id": "ST-239",
     "order": 50,
-    "name": "Sao Tomé-et-Principe",
-    "altNames": [],
+    "name": "Sao Tome and Principe",
+    "altNames": [
+      "Sao Tomé-et-Principe"
+    ],
     "iso2": "ST",
     "iso3": "STP",
     "capital": "São Tomé",
@@ -678,8 +762,10 @@
   {
     "id": "GQ-240",
     "order": 51,
-    "name": "Guinée équatoriale",
-    "altNames": [],
+    "name": "Equatorial Guinea",
+    "altNames": [
+      "Guinée équatoriale"
+    ],
     "iso2": "GQ",
     "iso3": "GNQ",
     "capital": "Malabo",
@@ -704,8 +790,9 @@
   {
     "id": "CG-242",
     "order": 53,
-    "name": "République du Congo",
+    "name": "Republic of the Congo",
     "altNames": [
+      "République du Congo",
       "Congo-Brazzaville",
       "Congo"
     ],
@@ -720,8 +807,9 @@
   {
     "id": "CD-243",
     "order": 54,
-    "name": "RD Congo",
+    "name": "Democratic Republic of the Congo",
     "altNames": [
+      "RD Congo",
       "République démocratique du Congo",
       "Congo-Kinshasa"
     ],
@@ -749,8 +837,10 @@
   {
     "id": "GW-245",
     "order": 56,
-    "name": "Guinée-Bissau",
-    "altNames": [],
+    "name": "Guinea-Bissau",
+    "altNames": [
+      "Guinée-Bissau"
+    ],
     "iso2": "GW",
     "iso3": "GNB",
     "capital": "Bissau",
@@ -775,8 +865,10 @@
   {
     "id": "SH-247",
     "order": 58,
-    "name": "Île de l'Ascension",
-    "altNames": [],
+    "name": "Saint Helena",
+    "altNames": [
+      "Île de l'Ascension"
+    ],
     "iso2": "SH",
     "iso3": "SHN",
     "capital": "Georgetown",
@@ -801,8 +893,10 @@
   {
     "id": "SD-249",
     "order": 60,
-    "name": "Soudan",
-    "altNames": [],
+    "name": "Sudan",
+    "altNames": [
+      "Soudan"
+    ],
     "iso2": "SD",
     "iso3": "SDN",
     "capital": "Khartoum",
@@ -827,12 +921,16 @@
   {
     "id": "ET-251",
     "order": 62,
-    "name": "Éthiopie",
-    "altNames": [],
+    "name": "Ethiopia",
+    "altNames": [
+      "Éthiopie"
+    ],
     "iso2": "ET",
     "iso3": "ETH",
-    "capital": "Addis-Abeba",
-    "altCapitals": [],
+    "capital": "Addis Ababa",
+    "altCapitals": [
+      "Addis-Abeba"
+    ],
     "indicatif": "251",
     "currency": "ETB",
     "currencyName": "Birr éthiopien"
@@ -840,12 +938,16 @@
   {
     "id": "SO-252",
     "order": 63,
-    "name": "Somalie",
-    "altNames": [],
+    "name": "Somalia",
+    "altNames": [
+      "Somalie"
+    ],
     "iso2": "SO",
     "iso3": "SOM",
-    "capital": "Mogadiscio",
-    "altCapitals": [],
+    "capital": "Mogadishu",
+    "altCapitals": [
+      "Mogadiscio"
+    ],
     "indicatif": "252",
     "currency": "SOS",
     "currencyName": "Shilling somalien"
@@ -881,8 +983,10 @@
   {
     "id": "TZ-255",
     "order": 66,
-    "name": "Tanzanie",
-    "altNames": [],
+    "name": "Tanzania",
+    "altNames": [
+      "Tanzanie"
+    ],
     "iso2": "TZ",
     "iso3": "TZA",
     "capital": "Dodoma",
@@ -894,8 +998,10 @@
   {
     "id": "UG-256",
     "order": 67,
-    "name": "Ouganda",
-    "altNames": [],
+    "name": "Uganda",
+    "altNames": [
+      "Ouganda"
+    ],
     "iso2": "UG",
     "iso3": "UGA",
     "capital": "Kampala",
@@ -933,8 +1039,10 @@
   {
     "id": "ZM-260",
     "order": 70,
-    "name": "Zambie",
-    "altNames": [],
+    "name": "Zambia",
+    "altNames": [
+      "Zambie"
+    ],
     "iso2": "ZM",
     "iso3": "ZMB",
     "capital": "Lusaka",
@@ -959,8 +1067,9 @@
   {
     "id": "RE-262",
     "order": 72,
-    "name": "La Réunion / Mayotte",
+    "name": "Réunion / Mayotte",
     "altNames": [
+      "La Réunion / Mayotte",
       "La Réunion",
       "Réunion",
       "Mayotte"
@@ -976,8 +1085,10 @@
   {
     "id": "TF-262",
     "order": 73,
-    "name": "Terres australes et antarctiques françaises",
-    "altNames": [],
+    "name": "French Southern and Antarctic Lands",
+    "altNames": [
+      "Terres australes et antarctiques françaises"
+    ],
     "iso2": "TF",
     "iso3": "ATF",
     "capital": "Port-aux-Français",
@@ -1002,8 +1113,10 @@
   {
     "id": "NA-264",
     "order": 75,
-    "name": "Namibie",
-    "altNames": [],
+    "name": "Namibia",
+    "altNames": [
+      "Namibie"
+    ],
     "iso2": "NA",
     "iso3": "NAM",
     "capital": "Windhoek",
@@ -1069,8 +1182,10 @@
   {
     "id": "KM-269",
     "order": 80,
-    "name": "Comores",
-    "altNames": [],
+    "name": "Comoros",
+    "altNames": [
+      "Comores"
+    ],
     "iso2": "KM",
     "iso3": "COM",
     "capital": "Moroni",
@@ -1082,12 +1197,19 @@
   {
     "id": "ZA-27",
     "order": 81,
-    "name": "Afrique du Sud",
-    "altNames": [],
+    "name": "South Africa",
+    "altNames": [
+      "Afrique du Sud"
+    ],
     "iso2": "ZA",
     "iso3": "ZAF",
     "capital": "Pretoria",
-    "altCapitals": [],
+    "altCapitals": [
+      "Cape Town",
+      "Bloemfontein",
+      "Le Cap",
+      "Pretoria"
+    ],
     "indicatif": "27",
     "currency": "ZAR",
     "currencyName": "Rand sud-africain"
@@ -1095,8 +1217,10 @@
   {
     "id": "SH-290",
     "order": 82,
-    "name": "Sainte-Hélène",
-    "altNames": [],
+    "name": "Saint Helena",
+    "altNames": [
+      "Sainte-Hélène"
+    ],
     "iso2": "SH",
     "iso3": "SHN",
     "capital": "Jamestown",
@@ -1108,8 +1232,10 @@
   {
     "id": "ER-291",
     "order": 83,
-    "name": "Érythrée",
-    "altNames": [],
+    "name": "Eritrea",
+    "altNames": [
+      "Érythrée"
+    ],
     "iso2": "ER",
     "iso3": "ERI",
     "capital": "Asmara",
@@ -1134,8 +1260,10 @@
   {
     "id": "FO-298",
     "order": 85,
-    "name": "Îles Féroé",
-    "altNames": [],
+    "name": "Faroe Islands",
+    "altNames": [
+      "Îles Féroé"
+    ],
     "iso2": "FO",
     "iso3": "FRO",
     "capital": "Tórshavn",
@@ -1147,8 +1275,10 @@
   {
     "id": "GL-299",
     "order": 86,
-    "name": "Groenland",
-    "altNames": [],
+    "name": "Greenland",
+    "altNames": [
+      "Groenland"
+    ],
     "iso2": "GL",
     "iso3": "GRL",
     "capital": "Nuuk",
@@ -1160,12 +1290,16 @@
   {
     "id": "GR-30",
     "order": 87,
-    "name": "Grèce",
-    "altNames": [],
+    "name": "Greece",
+    "altNames": [
+      "Grèce"
+    ],
     "iso2": "GR",
     "iso3": "GRC",
-    "capital": "Athènes",
-    "altCapitals": [],
+    "capital": "Athens",
+    "altCapitals": [
+      "Athènes"
+    ],
     "indicatif": "30",
     "currency": "EUR",
     "currencyName": "Euro"
@@ -1173,8 +1307,10 @@
   {
     "id": "NL-31",
     "order": 88,
-    "name": "Pays-Bas",
-    "altNames": [],
+    "name": "Netherlands",
+    "altNames": [
+      "Pays-Bas"
+    ],
     "iso2": "NL",
     "iso3": "NLD",
     "capital": "Amsterdam",
@@ -1186,12 +1322,16 @@
   {
     "id": "BE-32",
     "order": 89,
-    "name": "Belgique",
-    "altNames": [],
+    "name": "Belgium",
+    "altNames": [
+      "Belgique"
+    ],
     "iso2": "BE",
     "iso3": "BEL",
-    "capital": "Bruxelles",
-    "altCapitals": [],
+    "capital": "Brussels",
+    "altCapitals": [
+      "Bruxelles"
+    ],
     "indicatif": "32",
     "currency": "EUR",
     "currencyName": "Euro"
@@ -1212,8 +1352,10 @@
   {
     "id": "ES-34",
     "order": 91,
-    "name": "Espagne",
-    "altNames": [],
+    "name": "Spain",
+    "altNames": [
+      "Espagne"
+    ],
     "iso2": "ES",
     "iso3": "ESP",
     "capital": "Madrid",
@@ -1242,8 +1384,10 @@
     "altNames": [],
     "iso2": "PT",
     "iso3": "PRT",
-    "capital": "Lisbonne",
-    "altCapitals": [],
+    "capital": "Lisbon",
+    "altCapitals": [
+      "Lisbonne"
+    ],
     "indicatif": "351",
     "currency": "EUR",
     "currencyName": "Euro"
@@ -1267,8 +1411,10 @@
   {
     "id": "IE-353",
     "order": 95,
-    "name": "Irlande",
-    "altNames": [],
+    "name": "Ireland",
+    "altNames": [
+      "Irlande"
+    ],
     "iso2": "IE",
     "iso3": "IRL",
     "capital": "Dublin",
@@ -1280,8 +1426,10 @@
   {
     "id": "IS-354",
     "order": 96,
-    "name": "Islande",
-    "altNames": [],
+    "name": "Iceland",
+    "altNames": [
+      "Islande"
+    ],
     "iso2": "IS",
     "iso3": "ISL",
     "capital": "Reykjavik",
@@ -1293,8 +1441,10 @@
   {
     "id": "AL-355",
     "order": 97,
-    "name": "Albanie",
-    "altNames": [],
+    "name": "Albania",
+    "altNames": [
+      "Albanie"
+    ],
     "iso2": "AL",
     "iso3": "ALB",
     "capital": "Tirana",
@@ -1306,12 +1456,16 @@
   {
     "id": "MT-356",
     "order": 98,
-    "name": "Malte",
-    "altNames": [],
+    "name": "Malta",
+    "altNames": [
+      "Malte"
+    ],
     "iso2": "MT",
     "iso3": "MLT",
-    "capital": "La Valette",
-    "altCapitals": [],
+    "capital": "Valletta",
+    "altCapitals": [
+      "La Valette"
+    ],
     "indicatif": "356",
     "currency": "EUR",
     "currencyName": "Euro"
@@ -1319,12 +1473,16 @@
   {
     "id": "CY-357",
     "order": 99,
-    "name": "Chypre",
-    "altNames": [],
+    "name": "Cyprus",
+    "altNames": [
+      "Chypre"
+    ],
     "iso2": "CY",
     "iso3": "CYP",
-    "capital": "Nicosie",
-    "altCapitals": [],
+    "capital": "Nicosia",
+    "altCapitals": [
+      "Nicosie"
+    ],
     "indicatif": "357",
     "currency": "EUR",
     "currencyName": "Euro"
@@ -1332,8 +1490,10 @@
   {
     "id": "FI-358",
     "order": 100,
-    "name": "Finlande",
-    "altNames": [],
+    "name": "Finland",
+    "altNames": [
+      "Finlande"
+    ],
     "iso2": "FI",
     "iso3": "FIN",
     "capital": "Helsinki",
@@ -1345,8 +1505,10 @@
   {
     "id": "AX-358",
     "order": 101,
-    "name": "Îles Åland",
-    "altNames": [],
+    "name": "Åland Islands",
+    "altNames": [
+      "Îles Åland"
+    ],
     "iso2": "AX",
     "iso3": "ALA",
     "capital": "Mariehamn",
@@ -1358,8 +1520,10 @@
   {
     "id": "BG-359",
     "order": 102,
-    "name": "Bulgarie",
-    "altNames": [],
+    "name": "Bulgaria",
+    "altNames": [
+      "Bulgarie"
+    ],
     "iso2": "BG",
     "iso3": "BGR",
     "capital": "Sofia",
@@ -1371,8 +1535,10 @@
   {
     "id": "HU-36",
     "order": 103,
-    "name": "Hongrie",
-    "altNames": [],
+    "name": "Hungary",
+    "altNames": [
+      "Hongrie"
+    ],
     "iso2": "HU",
     "iso3": "HUN",
     "capital": "Budapest",
@@ -1384,8 +1550,10 @@
   {
     "id": "LT-370",
     "order": 104,
-    "name": "Lituanie",
-    "altNames": [],
+    "name": "Lithuania",
+    "altNames": [
+      "Lituanie"
+    ],
     "iso2": "LT",
     "iso3": "LTU",
     "capital": "Vilnius",
@@ -1397,8 +1565,10 @@
   {
     "id": "LV-371",
     "order": 105,
-    "name": "Lettonie",
-    "altNames": [],
+    "name": "Latvia",
+    "altNames": [
+      "Lettonie"
+    ],
     "iso2": "LV",
     "iso3": "LVA",
     "capital": "Riga",
@@ -1410,8 +1580,10 @@
   {
     "id": "EE-372",
     "order": 106,
-    "name": "Estonie",
-    "altNames": [],
+    "name": "Estonia",
+    "altNames": [
+      "Estonie"
+    ],
     "iso2": "EE",
     "iso3": "EST",
     "capital": "Tallinn",
@@ -1423,8 +1595,10 @@
   {
     "id": "MD-373",
     "order": 107,
-    "name": "Moldavie",
-    "altNames": [],
+    "name": "Moldova",
+    "altNames": [
+      "Moldavie"
+    ],
     "iso2": "MD",
     "iso3": "MDA",
     "capital": "Chisinau",
@@ -1436,12 +1610,16 @@
   {
     "id": "AM-374",
     "order": 108,
-    "name": "Arménie",
-    "altNames": [],
+    "name": "Armenia",
+    "altNames": [
+      "Arménie"
+    ],
     "iso2": "AM",
     "iso3": "ARM",
-    "capital": "Erevan",
-    "altCapitals": [],
+    "capital": "Yerevan",
+    "altCapitals": [
+      "Erevan"
+    ],
     "indicatif": "374",
     "currency": "AMD",
     "currencyName": "Dram arménien"
@@ -1449,8 +1627,9 @@
   {
     "id": "BY-375",
     "order": 109,
-    "name": "Biélorussie",
+    "name": "Belarus",
     "altNames": [
+      "Biélorussie",
       "Bélarus",
       "Belarus"
     ],
@@ -1465,15 +1644,17 @@
   {
     "id": "AD-376",
     "order": 110,
-    "name": "Andorre",
+    "name": "Andorra",
     "altNames": [
+      "Andorre",
       "Andorre-la-Vieille",
       "Andorre-la-V."
     ],
     "iso2": "AD",
     "iso3": "AND",
-    "capital": "Andorre-la-Vieille",
+    "capital": "Andorra la Vella",
     "altCapitals": [
+      "Andorre-la-Vieille",
       "Andorre-la-V.",
       "Andorre la Vieille"
     ],
@@ -1499,12 +1680,15 @@
   {
     "id": "SM-378",
     "order": 112,
-    "name": "Saint-Marin",
-    "altNames": [],
+    "name": "San Marino",
+    "altNames": [
+      "Saint-Marin"
+    ],
     "iso2": "SM",
     "iso3": "SMR",
-    "capital": "Saint-Marin",
+    "capital": "San Marino",
     "altCapitals": [
+      "Saint-Marin",
       "San Marino",
       "Cité de Saint-Marin"
     ],
@@ -1515,15 +1699,17 @@
   {
     "id": "VA-379",
     "order": 113,
-    "name": "Cité du Vatican",
+    "name": "Vatican City",
     "altNames": [
+      "Cité du Vatican",
       "Vatican",
       "Saint-Siège"
     ],
     "iso2": "VA",
     "iso3": "VAT",
-    "capital": "Vatican",
+    "capital": "Vatican City",
     "altCapitals": [
+      "Vatican",
       "Cité du Vatican"
     ],
     "indicatif": "379",
@@ -1548,8 +1734,10 @@
   {
     "id": "RS-381",
     "order": 115,
-    "name": "Serbie",
-    "altNames": [],
+    "name": "Serbia",
+    "altNames": [
+      "Serbie"
+    ],
     "iso2": "RS",
     "iso3": "SRB",
     "capital": "Belgrade",
@@ -1561,8 +1749,10 @@
   {
     "id": "ME-382",
     "order": 116,
-    "name": "Monténégro",
-    "altNames": [],
+    "name": "Montenegro",
+    "altNames": [
+      "Monténégro"
+    ],
     "iso2": "ME",
     "iso3": "MNE",
     "capital": "Podgorica",
@@ -1587,8 +1777,10 @@
   {
     "id": "HR-385",
     "order": 118,
-    "name": "Croatie",
-    "altNames": [],
+    "name": "Croatia",
+    "altNames": [
+      "Croatie"
+    ],
     "iso2": "HR",
     "iso3": "HRV",
     "capital": "Zagreb",
@@ -1600,8 +1792,10 @@
   {
     "id": "SI-386",
     "order": 119,
-    "name": "Slovénie",
-    "altNames": [],
+    "name": "Slovenia",
+    "altNames": [
+      "Slovénie"
+    ],
     "iso2": "SI",
     "iso3": "SVN",
     "capital": "Ljubljana",
@@ -1613,8 +1807,10 @@
   {
     "id": "BA-387",
     "order": 120,
-    "name": "Bosnie-Herzégovine",
-    "altNames": [],
+    "name": "Bosnia and Herzegovina",
+    "altNames": [
+      "Bosnie-Herzégovine"
+    ],
     "iso2": "BA",
     "iso3": "BIH",
     "capital": "Sarajevo",
@@ -1626,8 +1822,9 @@
   {
     "id": "MK-389",
     "order": 121,
-    "name": "Macédoine du Nord",
+    "name": "North Macedonia",
     "altNames": [
+      "Macédoine du Nord",
       "Macédoine",
       "Macédoine du nord"
     ],
@@ -1642,8 +1839,10 @@
   {
     "id": "IT-39",
     "order": 122,
-    "name": "Italie",
-    "altNames": [],
+    "name": "Italy",
+    "altNames": [
+      "Italie"
+    ],
     "iso2": "IT",
     "iso3": "ITA",
     "capital": "Rome",
@@ -1655,12 +1854,16 @@
   {
     "id": "RO-40",
     "order": 123,
-    "name": "Roumanie",
-    "altNames": [],
+    "name": "Romania",
+    "altNames": [
+      "Roumanie"
+    ],
     "iso2": "RO",
     "iso3": "ROU",
-    "capital": "Bucarest",
-    "altCapitals": [],
+    "capital": "Bucharest",
+    "altCapitals": [
+      "Bucarest"
+    ],
     "indicatif": "40",
     "currency": "RON",
     "currencyName": "Leu roumain"
@@ -1668,12 +1871,16 @@
   {
     "id": "CH-41",
     "order": 124,
-    "name": "Suisse",
-    "altNames": [],
+    "name": "Switzerland",
+    "altNames": [
+      "Suisse"
+    ],
     "iso2": "CH",
     "iso3": "CHE",
-    "capital": "Berne",
-    "altCapitals": [],
+    "capital": "Bern",
+    "altCapitals": [
+      "Berne"
+    ],
     "indicatif": "41",
     "currency": "CHF",
     "currencyName": "Franc suisse"
@@ -1681,8 +1888,10 @@
   {
     "id": "CZ-420",
     "order": 125,
-    "name": "République tchèque",
-    "altNames": [],
+    "name": "Czech Republic",
+    "altNames": [
+      "République tchèque"
+    ],
     "iso2": "CZ",
     "iso3": "CZE",
     "capital": "Prague",
@@ -1694,8 +1903,10 @@
   {
     "id": "SK-421",
     "order": 126,
-    "name": "Slovaquie",
-    "altNames": [],
+    "name": "Slovakia",
+    "altNames": [
+      "Slovaquie"
+    ],
     "iso2": "SK",
     "iso3": "SVK",
     "capital": "Bratislava",
@@ -1720,12 +1931,16 @@
   {
     "id": "AT-43",
     "order": 128,
-    "name": "Autriche",
-    "altNames": [],
+    "name": "Austria",
+    "altNames": [
+      "Autriche"
+    ],
     "iso2": "AT",
     "iso3": "AUT",
-    "capital": "Vienne",
-    "altCapitals": [],
+    "capital": "Vienna",
+    "altCapitals": [
+      "Vienne"
+    ],
     "indicatif": "43",
     "currency": "EUR",
     "currencyName": "Euro"
@@ -1733,12 +1948,16 @@
   {
     "id": "GG-44",
     "order": 129,
-    "name": "Guernesey",
-    "altNames": [],
+    "name": "Guernsey",
+    "altNames": [
+      "Guernesey"
+    ],
     "iso2": "GG",
     "iso3": "GGY",
-    "capital": "Saint-Pierre-Port",
-    "altCapitals": [],
+    "capital": "Saint Peter Port",
+    "altCapitals": [
+      "Saint-Pierre-Port"
+    ],
     "indicatif": "44",
     "currency": "GBP",
     "currencyName": "Livre sterling"
@@ -1746,8 +1965,10 @@
   {
     "id": "IM-44",
     "order": 130,
-    "name": "Île de Man",
-    "altNames": [],
+    "name": "Isle of Man",
+    "altNames": [
+      "Île de Man"
+    ],
     "iso2": "IM",
     "iso3": "IMN",
     "capital": "Douglas",
@@ -1763,8 +1984,10 @@
     "altNames": [],
     "iso2": "JE",
     "iso3": "JEY",
-    "capital": "Saint-Hélier",
-    "altCapitals": [],
+    "capital": "Saint Helier",
+    "altCapitals": [
+      "Saint-Hélier"
+    ],
     "indicatif": "44",
     "currency": "GBP",
     "currencyName": "Livre"
@@ -1772,16 +1995,19 @@
   {
     "id": "GB-44",
     "order": 132,
-    "name": "Royaume-Uni",
+    "name": "United Kingdom",
     "altNames": [
+      "Royaume-Uni",
       "Angleterre",
       "Grande-Bretagne",
       "UK"
     ],
     "iso2": "GB",
     "iso3": "GBR",
-    "capital": "Londres",
-    "altCapitals": [],
+    "capital": "London",
+    "altCapitals": [
+      "Londres"
+    ],
     "indicatif": "44",
     "currency": "GBP",
     "currencyName": "Livre"
@@ -1789,12 +2015,16 @@
   {
     "id": "DK-45",
     "order": 133,
-    "name": "Danemark",
-    "altNames": [],
+    "name": "Denmark",
+    "altNames": [
+      "Danemark"
+    ],
     "iso2": "DK",
     "iso3": "DNK",
-    "capital": "Copenhague",
-    "altCapitals": [],
+    "capital": "Copenhagen",
+    "altCapitals": [
+      "Copenhague"
+    ],
     "indicatif": "45",
     "currency": "DKK",
     "currencyName": "Couronne"
@@ -1802,8 +2032,10 @@
   {
     "id": "SE-46",
     "order": 134,
-    "name": "Suède",
-    "altNames": [],
+    "name": "Sweden",
+    "altNames": [
+      "Suède"
+    ],
     "iso2": "SE",
     "iso3": "SWE",
     "capital": "Stockholm",
@@ -1815,8 +2047,10 @@
   {
     "id": "BV-47",
     "order": 135,
-    "name": "Île Bouvet",
-    "altNames": [],
+    "name": "Bouvet Island",
+    "altNames": [
+      "Île Bouvet"
+    ],
     "iso2": "BV",
     "iso3": "BVT",
     "capital": null,
@@ -1828,8 +2062,10 @@
   {
     "id": "NO-47",
     "order": 136,
-    "name": "Norvège",
-    "altNames": [],
+    "name": "Norway",
+    "altNames": [
+      "Norvège"
+    ],
     "iso2": "NO",
     "iso3": "NOR",
     "capital": "Oslo",
@@ -1854,12 +2090,16 @@
   {
     "id": "PL-48",
     "order": 138,
-    "name": "Pologne",
-    "altNames": [],
+    "name": "Poland",
+    "altNames": [
+      "Pologne"
+    ],
     "iso2": "PL",
     "iso3": "POL",
-    "capital": "Varsovie",
-    "altCapitals": [],
+    "capital": "Warsaw",
+    "altCapitals": [
+      "Varsovie"
+    ],
     "indicatif": "48",
     "currency": "PLN",
     "currencyName": "Zloty polonais"
@@ -1867,8 +2107,10 @@
   {
     "id": "DE-49",
     "order": 139,
-    "name": "Allemagne",
-    "altNames": [],
+    "name": "Germany",
+    "altNames": [
+      "Allemagne"
+    ],
     "iso2": "DE",
     "iso3": "DEU",
     "capital": "Berlin",
@@ -1880,8 +2122,10 @@
   {
     "id": "GS-500",
     "order": 140,
-    "name": "Géorgie du Sud-et-les îles Sandwich du Sud",
-    "altNames": [],
+    "name": "South Georgia and the South Sandwich Islands",
+    "altNames": [
+      "Géorgie du Sud-et-les îles Sandwich du Sud"
+    ],
     "iso2": "GS",
     "iso3": "SGS",
     "capital": "King Edward Point",
@@ -1893,8 +2137,10 @@
   {
     "id": "FK-500",
     "order": 141,
-    "name": "Îles Malouines",
-    "altNames": [],
+    "name": "Falkland Islands",
+    "altNames": [
+      "Îles Malouines"
+    ],
     "iso2": "FK",
     "iso3": "FLK",
     "capital": "Stanley",
@@ -1923,8 +2169,9 @@
     "altNames": [],
     "iso2": "GT",
     "iso3": "GTM",
-    "capital": "Guatemala",
+    "capital": "Guatemala City",
     "altCapitals": [
+      "Guatemala",
       "Guatemala City",
       "Ville de Guatemala"
     ],
@@ -1935,8 +2182,10 @@
   {
     "id": "SV-503",
     "order": 144,
-    "name": "Salvador",
-    "altNames": [],
+    "name": "El Salvador",
+    "altNames": [
+      "Salvador"
+    ],
     "iso2": "SV",
     "iso3": "SLV",
     "capital": "San Salvador",
@@ -1991,8 +2240,9 @@
     "altNames": [],
     "iso2": "PA",
     "iso3": "PAN",
-    "capital": "Panama",
+    "capital": "Panama City",
     "altCapitals": [
+      "Panama",
       "Panama City",
       "Ciudad de Panama"
     ],
@@ -2003,8 +2253,10 @@
   {
     "id": "PM-508",
     "order": 149,
-    "name": "Saint-Pierre-et-Miquelon",
-    "altNames": [],
+    "name": "Saint Pierre and Miquelon",
+    "altNames": [
+      "Saint-Pierre-et-Miquelon"
+    ],
     "iso2": "PM",
     "iso3": "SPM",
     "capital": "Saint-Pierre",
@@ -2016,8 +2268,10 @@
   {
     "id": "HT-509",
     "order": 150,
-    "name": "Haïti",
-    "altNames": [],
+    "name": "Haiti",
+    "altNames": [
+      "Haïti"
+    ],
     "iso2": "HT",
     "iso3": "HTI",
     "capital": "Port-au-Prince",
@@ -2029,8 +2283,10 @@
   {
     "id": "PE-51",
     "order": 151,
-    "name": "Pérou",
-    "altNames": [],
+    "name": "Peru",
+    "altNames": [
+      "Pérou"
+    ],
     "iso2": "PE",
     "iso3": "PER",
     "capital": "Lima",
@@ -2042,12 +2298,15 @@
   {
     "id": "MX-52",
     "order": 152,
-    "name": "Mexique",
-    "altNames": [],
+    "name": "Mexico",
+    "altNames": [
+      "Mexique"
+    ],
     "iso2": "MX",
     "iso3": "MEX",
-    "capital": "Mexico",
+    "capital": "Mexico City",
     "altCapitals": [
+      "Mexico",
       "Mexico City",
       "Ciudad de Mexico",
       "Mexico DF"
@@ -2063,8 +2322,10 @@
     "altNames": [],
     "iso2": "CU",
     "iso3": "CUB",
-    "capital": "La Havane",
-    "altCapitals": [],
+    "capital": "Havana",
+    "altCapitals": [
+      "La Havane"
+    ],
     "indicatif": "53",
     "currency": "CUC",
     "currencyName": "Peso cubain convertible"
@@ -2072,8 +2333,10 @@
   {
     "id": "AR-54",
     "order": 154,
-    "name": "Argentine",
-    "altNames": [],
+    "name": "Argentina",
+    "altNames": [
+      "Argentine"
+    ],
     "iso2": "AR",
     "iso3": "ARG",
     "capital": "Buenos Aires",
@@ -2085,12 +2348,16 @@
   {
     "id": "BR-55",
     "order": 155,
-    "name": "Brésil",
-    "altNames": [],
+    "name": "Brazil",
+    "altNames": [
+      "Brésil"
+    ],
     "iso2": "BR",
     "iso3": "BRA",
-    "capital": "Brasilia",
-    "altCapitals": [],
+    "capital": "Brasília",
+    "altCapitals": [
+      "Brasilia"
+    ],
     "indicatif": "55",
     "currency": "BRL",
     "currencyName": "Réal brésilien"
@@ -2098,8 +2365,10 @@
   {
     "id": "CL-56",
     "order": 156,
-    "name": "Chili",
-    "altNames": [],
+    "name": "Chile",
+    "altNames": [
+      "Chili"
+    ],
     "iso2": "CL",
     "iso3": "CHL",
     "capital": "Santiago",
@@ -2111,12 +2380,16 @@
   {
     "id": "CO-57",
     "order": 157,
-    "name": "Colombie",
-    "altNames": [],
+    "name": "Colombia",
+    "altNames": [
+      "Colombie"
+    ],
     "iso2": "CO",
     "iso3": "COL",
-    "capital": "Bogota",
-    "altCapitals": [],
+    "capital": "Bogotá",
+    "altCapitals": [
+      "Bogota"
+    ],
     "indicatif": "57",
     "currency": "COP",
     "currencyName": "Peso colombien"
@@ -2150,8 +2423,10 @@
   {
     "id": "BL-590",
     "order": 160,
-    "name": "Saint-Barthélemy",
-    "altNames": [],
+    "name": "Saint Barthélemy",
+    "altNames": [
+      "Saint-Barthélemy"
+    ],
     "iso2": "BL",
     "iso3": "BLM",
     "capital": "Gustavia",
@@ -2163,8 +2438,10 @@
   {
     "id": "MF-590",
     "order": 161,
-    "name": "Saint-Martin",
-    "altNames": [],
+    "name": "Saint Martin",
+    "altNames": [
+      "Saint-Martin"
+    ],
     "iso2": "MF",
     "iso3": "MAF",
     "capital": "Marigot",
@@ -2176,8 +2453,10 @@
   {
     "id": "BO-591",
     "order": 162,
-    "name": "Bolivie",
-    "altNames": [],
+    "name": "Bolivia",
+    "altNames": [
+      "Bolivie"
+    ],
     "iso2": "BO",
     "iso3": "BOL",
     "capital": "La Paz",
@@ -2202,8 +2481,10 @@
   {
     "id": "EC-593",
     "order": 164,
-    "name": "Équateur",
-    "altNames": [],
+    "name": "Ecuador",
+    "altNames": [
+      "Équateur"
+    ],
     "iso2": "EC",
     "iso3": "ECU",
     "capital": "Quito",
@@ -2215,8 +2496,10 @@
   {
     "id": "GF-594",
     "order": 165,
-    "name": "Guyane",
-    "altNames": [],
+    "name": "French Guiana",
+    "altNames": [
+      "Guyane"
+    ],
     "iso2": "GF",
     "iso3": "GUF",
     "capital": "Cayenne",
@@ -2293,8 +2576,10 @@
   {
     "id": "BQ-599",
     "order": 171,
-    "name": "Pays-Bas caribéens",
-    "altNames": [],
+    "name": "Caribbean Netherlands",
+    "altNames": [
+      "Pays-Bas caribéens"
+    ],
     "iso2": "BQ",
     "iso3": "BES",
     "capital": "Kralendijk",
@@ -2306,8 +2591,10 @@
   {
     "id": "MY-60",
     "order": 172,
-    "name": "Malaisie",
-    "altNames": [],
+    "name": "Malaysia",
+    "altNames": [
+      "Malaisie"
+    ],
     "iso2": "MY",
     "iso3": "MYS",
     "capital": "Kuala Lumpur",
@@ -2319,8 +2606,10 @@
   {
     "id": "AU-61",
     "order": 173,
-    "name": "Australie",
-    "altNames": [],
+    "name": "Australia",
+    "altNames": [
+      "Australie"
+    ],
     "iso2": "AU",
     "iso3": "AUS",
     "capital": "Canberra",
@@ -2332,8 +2621,10 @@
   {
     "id": "ID-62",
     "order": 174,
-    "name": "Indonésie",
-    "altNames": [],
+    "name": "Indonesia",
+    "altNames": [
+      "Indonésie"
+    ],
     "iso2": "ID",
     "iso3": "IDN",
     "capital": "Jakarta",
@@ -2349,8 +2640,10 @@
     "altNames": [],
     "iso2": "PH",
     "iso3": "PHL",
-    "capital": "Manille",
-    "altCapitals": [],
+    "capital": "Manila",
+    "altCapitals": [
+      "Manille"
+    ],
     "indicatif": "63",
     "currency": "PHP",
     "currencyName": "Peso philippin"
@@ -2358,8 +2651,10 @@
   {
     "id": "NZ-64",
     "order": 176,
-    "name": "Nouvelle-Zélande",
-    "altNames": [],
+    "name": "New Zealand",
+    "altNames": [
+      "Nouvelle-Zélande"
+    ],
     "iso2": "NZ",
     "iso3": "NZL",
     "capital": "Wellington",
@@ -2371,8 +2666,10 @@
   {
     "id": "PN-64",
     "order": 177,
-    "name": "Îles Pitcairn",
-    "altNames": [],
+    "name": "Pitcairn Islands",
+    "altNames": [
+      "Îles Pitcairn"
+    ],
     "iso2": "PN",
     "iso3": "PCN",
     "capital": "Adamstown",
@@ -2384,12 +2681,15 @@
   {
     "id": "SG-65",
     "order": 178,
-    "name": "Singapour",
-    "altNames": [],
+    "name": "Singapore",
+    "altNames": [
+      "Singapour"
+    ],
     "iso2": "SG",
     "iso3": "SGP",
-    "capital": "Singapour",
+    "capital": "Singapore",
     "altCapitals": [
+      "Singapour",
       "Singapore"
     ],
     "indicatif": "65",
@@ -2399,8 +2699,10 @@
   {
     "id": "TH-66",
     "order": 179,
-    "name": "Thaïlande",
-    "altNames": [],
+    "name": "Thailand",
+    "altNames": [
+      "Thaïlande"
+    ],
     "iso2": "TH",
     "iso3": "THA",
     "capital": "Bangkok",
@@ -2412,8 +2714,9 @@
   {
     "id": "TL-670",
     "order": 180,
-    "name": "Timor oriental",
+    "name": "East Timor",
     "altNames": [
+      "Timor oriental",
       "Timor-Leste",
       "Timor-Oriental"
     ],
@@ -2428,8 +2731,10 @@
   {
     "id": "NF-672",
     "order": 181,
-    "name": "Île Norfolk",
-    "altNames": [],
+    "name": "Norfolk Island",
+    "altNames": [
+      "Île Norfolk"
+    ],
     "iso2": "NF",
     "iso3": "NFK",
     "capital": "Kingston",
@@ -2458,7 +2763,7 @@
     "altNames": [],
     "iso2": "NR",
     "iso3": "NRU",
-    "capital": "Yaren",
+    "capital": null,
     "altCapitals": [],
     "indicatif": "674",
     "currency": "AUD",
@@ -2467,8 +2772,10 @@
   {
     "id": "PG-675",
     "order": 184,
-    "name": "Papouasie-Nouvelle-Guinée",
-    "altNames": [],
+    "name": "Papua New Guinea",
+    "altNames": [
+      "Papouasie-Nouvelle-Guinée"
+    ],
     "iso2": "PG",
     "iso3": "PNG",
     "capital": "Port Moresby",
@@ -2493,8 +2800,10 @@
   {
     "id": "SB-677",
     "order": 186,
-    "name": "Îles Salomon",
-    "altNames": [],
+    "name": "Solomon Islands",
+    "altNames": [
+      "Îles Salomon"
+    ],
     "iso2": "SB",
     "iso3": "SLB",
     "capital": "Honiara",
@@ -2510,8 +2819,10 @@
     "altNames": [],
     "iso2": "VU",
     "iso3": "VUT",
-    "capital": "Port-Vila",
-    "altCapitals": [],
+    "capital": "Port Vila",
+    "altCapitals": [
+      "Port-Vila"
+    ],
     "indicatif": "678",
     "currency": "VUV",
     "currencyName": "Vatu vanuatuan"
@@ -2519,8 +2830,10 @@
   {
     "id": "FJ-679",
     "order": 188,
-    "name": "Fidji",
-    "altNames": [],
+    "name": "Fiji",
+    "altNames": [
+      "Fidji"
+    ],
     "iso2": "FJ",
     "iso3": "FJI",
     "capital": "Suva",
@@ -2532,8 +2845,10 @@
   {
     "id": "PW-680",
     "order": 189,
-    "name": "Palaos",
-    "altNames": [],
+    "name": "Palau",
+    "altNames": [
+      "Palaos"
+    ],
     "iso2": "PW",
     "iso3": "PLW",
     "capital": "Ngerulmud",
@@ -2545,8 +2860,10 @@
   {
     "id": "WF-681",
     "order": 190,
-    "name": "Wallis-et-Futuna",
-    "altNames": [],
+    "name": "Wallis and Futuna",
+    "altNames": [
+      "Wallis-et-Futuna"
+    ],
     "iso2": "WF",
     "iso3": "WLF",
     "capital": "Mata-Utu",
@@ -2558,8 +2875,10 @@
   {
     "id": "CK-682",
     "order": 191,
-    "name": "Îles Cook",
-    "altNames": [],
+    "name": "Cook Islands",
+    "altNames": [
+      "Îles Cook"
+    ],
     "iso2": "CK",
     "iso3": "COK",
     "capital": "Avarua",
@@ -2610,8 +2929,10 @@
   {
     "id": "NC-687",
     "order": 195,
-    "name": "Nouvelle-Calédonie",
-    "altNames": [],
+    "name": "New Caledonia",
+    "altNames": [
+      "Nouvelle-Calédonie"
+    ],
     "iso2": "NC",
     "iso3": "NCL",
     "capital": "Nouméa",
@@ -2636,8 +2957,10 @@
   {
     "id": "PF-689",
     "order": 197,
-    "name": "Polynésie française",
-    "altNames": [],
+    "name": "French Polynesia",
+    "altNames": [
+      "Polynésie française"
+    ],
     "iso2": "PF",
     "iso3": "PYF",
     "capital": "Papeete",
@@ -2662,8 +2985,10 @@
   {
     "id": "FM-691",
     "order": 199,
-    "name": "États fédérés de Micronésie",
-    "altNames": [],
+    "name": "Federated States of Micronesia",
+    "altNames": [
+      "États fédérés de Micronésie"
+    ],
     "iso2": "FM",
     "iso3": "FSM",
     "capital": "Palikir",
@@ -2675,8 +3000,10 @@
   {
     "id": "MH-692",
     "order": 200,
-    "name": "Îles Marshall",
-    "altNames": [],
+    "name": "Marshall Islands",
+    "altNames": [
+      "Îles Marshall"
+    ],
     "iso2": "MH",
     "iso3": "MHL",
     "capital": "Majuro",
@@ -2701,12 +3028,16 @@
   {
     "id": "RU-7",
     "order": 202,
-    "name": "Russie",
-    "altNames": [],
+    "name": "Russia",
+    "altNames": [
+      "Russie"
+    ],
     "iso2": "RU",
     "iso3": "RUS",
-    "capital": "Moscou",
-    "altCapitals": [],
+    "capital": "Moscow",
+    "altCapitals": [
+      "Moscou"
+    ],
     "indicatif": "7",
     "currency": "RUB",
     "currencyName": "Rouble russe"
@@ -2714,8 +3045,10 @@
   {
     "id": "JP-81",
     "order": 203,
-    "name": "Japon",
-    "altNames": [],
+    "name": "Japan",
+    "altNames": [
+      "Japon"
+    ],
     "iso2": "JP",
     "iso3": "JPN",
     "capital": "Tokyo",
@@ -2727,15 +3060,18 @@
   {
     "id": "KR-82",
     "order": 204,
-    "name": "Corée du Sud",
+    "name": "South Korea",
     "altNames": [
+      "Corée du Sud",
       "Corée du sud",
       "Sud-Corée"
     ],
     "iso2": "KR",
     "iso3": "KOR",
-    "capital": "Séoul",
-    "altCapitals": [],
+    "capital": "Seoul",
+    "altCapitals": [
+      "Séoul"
+    ],
     "indicatif": "82",
     "currency": "KRW",
     "currencyName": "Won sud-coréen"
@@ -2747,8 +3083,10 @@
     "altNames": [],
     "iso2": "VN",
     "iso3": "VNM",
-    "capital": "Hanoï",
-    "altCapitals": [],
+    "capital": "Hanoi",
+    "altCapitals": [
+      "Hanoï"
+    ],
     "indicatif": "84",
     "currency": "VND",
     "currencyName": "Dông vietnamien"
@@ -2756,8 +3094,9 @@
   {
     "id": "KP-850",
     "order": 206,
-    "name": "Corée du Nord",
+    "name": "North Korea",
     "altNames": [
+      "Corée du Nord",
       "Corée du nord"
     ],
     "iso2": "KP",
@@ -2775,8 +3114,10 @@
     "altNames": [],
     "iso2": "HK",
     "iso3": "HKG",
-    "capital": "City of Victoria",
-    "altCapitals": [],
+    "capital": "Victoria",
+    "altCapitals": [
+      "City of Victoria"
+    ],
     "indicatif": "852",
     "currency": "HKD",
     "currencyName": "Dollar de Hong Kong"
@@ -2784,8 +3125,10 @@
   {
     "id": "MO-853",
     "order": 208,
-    "name": "Macao",
-    "altNames": [],
+    "name": "Macau",
+    "altNames": [
+      "Macao"
+    ],
     "iso2": "MO",
     "iso3": "MAC",
     "capital": null,
@@ -2797,8 +3140,10 @@
   {
     "id": "KH-855",
     "order": 209,
-    "name": "Cambodge",
-    "altNames": [],
+    "name": "Cambodia",
+    "altNames": [
+      "Cambodge"
+    ],
     "iso2": "KH",
     "iso3": "KHM",
     "capital": "Phnom Penh",
@@ -2823,12 +3168,16 @@
   {
     "id": "CN-86",
     "order": 211,
-    "name": "Chine",
-    "altNames": [],
+    "name": "China",
+    "altNames": [
+      "Chine"
+    ],
     "iso2": "CN",
     "iso3": "CHN",
-    "capital": "Pékin",
-    "altCapitals": [],
+    "capital": "Beijing",
+    "altCapitals": [
+      "Pékin"
+    ],
     "indicatif": "86",
     "currency": "CNY",
     "currencyName": "Yuan renminbi chinois"
@@ -2849,8 +3198,10 @@
   {
     "id": "TW-886",
     "order": 213,
-    "name": "Taïwan",
-    "altNames": [],
+    "name": "Taiwan",
+    "altNames": [
+      "Taïwan"
+    ],
     "iso2": "TW",
     "iso3": "TWN",
     "capital": "Taipei",
@@ -2862,8 +3213,10 @@
   {
     "id": "TR-90",
     "order": 214,
-    "name": "Turquie",
-    "altNames": [],
+    "name": "Turkey",
+    "altNames": [
+      "Turquie"
+    ],
     "iso2": "TR",
     "iso3": "TUR",
     "capital": "Ankara",
@@ -2875,8 +3228,10 @@
   {
     "id": "IN-91",
     "order": 215,
-    "name": "Inde",
-    "altNames": [],
+    "name": "India",
+    "altNames": [
+      "Inde"
+    ],
     "iso2": "IN",
     "iso3": "IND",
     "capital": "New Delhi",
@@ -2927,8 +3282,9 @@
   {
     "id": "MM-95",
     "order": 219,
-    "name": "Birmanie",
+    "name": "Myanmar",
     "altNames": [
+      "Birmanie",
       "Myanmar"
     ],
     "iso2": "MM",
@@ -2955,12 +3311,16 @@
   {
     "id": "LB-961",
     "order": 221,
-    "name": "Liban",
-    "altNames": [],
+    "name": "Lebanon",
+    "altNames": [
+      "Liban"
+    ],
     "iso2": "LB",
     "iso3": "LBN",
-    "capital": "Beyrouth",
-    "altCapitals": [],
+    "capital": "Beirut",
+    "altCapitals": [
+      "Beyrouth"
+    ],
     "indicatif": "961",
     "currency": "LBP",
     "currencyName": "Livre libanaise"
@@ -2968,8 +3328,10 @@
   {
     "id": "JO-962",
     "order": 222,
-    "name": "Jordanie",
-    "altNames": [],
+    "name": "Jordan",
+    "altNames": [
+      "Jordanie"
+    ],
     "iso2": "JO",
     "iso3": "JOR",
     "capital": "Amman",
@@ -2981,12 +3343,16 @@
   {
     "id": "SY-963",
     "order": 223,
-    "name": "Syrie",
-    "altNames": [],
+    "name": "Syria",
+    "altNames": [
+      "Syrie"
+    ],
     "iso2": "SY",
     "iso3": "SYR",
-    "capital": "Damas",
-    "altCapitals": [],
+    "capital": "Damascus",
+    "altCapitals": [
+      "Damas"
+    ],
     "indicatif": "963",
     "currency": "SYP",
     "currencyName": "Livre syrienne"
@@ -2994,12 +3360,16 @@
   {
     "id": "IQ-964",
     "order": 224,
-    "name": "Irak",
-    "altNames": [],
+    "name": "Iraq",
+    "altNames": [
+      "Irak"
+    ],
     "iso2": "IQ",
     "iso3": "IRQ",
-    "capital": "Bagdad",
-    "altCapitals": [],
+    "capital": "Baghdad",
+    "altCapitals": [
+      "Bagdad"
+    ],
     "indicatif": "964",
     "currency": "IQD",
     "currencyName": "Dinar irakien"
@@ -3007,12 +3377,16 @@
   {
     "id": "KW-965",
     "order": 225,
-    "name": "Koweït",
-    "altNames": [],
+    "name": "Kuwait",
+    "altNames": [
+      "Koweït"
+    ],
     "iso2": "KW",
     "iso3": "KWT",
-    "capital": "Koweït",
-    "altCapitals": [],
+    "capital": "Kuwait City",
+    "altCapitals": [
+      "Koweït"
+    ],
     "indicatif": "965",
     "currency": "KWD",
     "currencyName": "Dinar koweïtien"
@@ -3020,12 +3394,16 @@
   {
     "id": "SA-966",
     "order": 226,
-    "name": "Arabie saoudite",
-    "altNames": [],
+    "name": "Saudi Arabia",
+    "altNames": [
+      "Arabie saoudite"
+    ],
     "iso2": "SA",
     "iso3": "SAU",
-    "capital": "Riyad",
-    "altCapitals": [],
+    "capital": "Riyadh",
+    "altCapitals": [
+      "Riyad"
+    ],
     "indicatif": "966",
     "currency": "SAR",
     "currencyName": "Riyal saoudien"
@@ -3033,8 +3411,10 @@
   {
     "id": "YE-967",
     "order": 227,
-    "name": "Yémen",
-    "altNames": [],
+    "name": "Yemen",
+    "altNames": [
+      "Yémen"
+    ],
     "iso2": "YE",
     "iso3": "YEM",
     "capital": "Sanaa",
@@ -3050,8 +3430,10 @@
     "altNames": [],
     "iso2": "OM",
     "iso3": "OMN",
-    "capital": "Mascate",
-    "altCapitals": [],
+    "capital": "Muscat",
+    "altCapitals": [
+      "Mascate"
+    ],
     "indicatif": "968",
     "currency": "OMR",
     "currencyName": "Riyal omanais"
@@ -3072,15 +3454,18 @@
   {
     "id": "AE-971",
     "order": 230,
-    "name": "Émirats arabes unis",
+    "name": "United Arab Emirates",
     "altNames": [
+      "Émirats arabes unis",
       "EAU",
       "UAE"
     ],
     "iso2": "AE",
     "iso3": "ARE",
-    "capital": "Abou Dabi",
-    "altCapitals": [],
+    "capital": "Abu Dhabi",
+    "altCapitals": [
+      "Abou Dabi"
+    ],
     "indicatif": "971",
     "currency": "AED",
     "currencyName": "Dirham des Émirats arabes unis"
@@ -3088,12 +3473,16 @@
   {
     "id": "IL-972",
     "order": 231,
-    "name": "Israël",
-    "altNames": [],
+    "name": "Israel",
+    "altNames": [
+      "Israël"
+    ],
     "iso2": "IL",
     "iso3": "ISR",
-    "capital": "Jérusalem",
-    "altCapitals": [],
+    "capital": "Jerusalem",
+    "altCapitals": [
+      "Jérusalem"
+    ],
     "indicatif": "972",
     "currency": "ILS",
     "currencyName": "Nouveau shekel israélien"
@@ -3101,8 +3490,10 @@
   {
     "id": "BH-973",
     "order": 232,
-    "name": "Bahreïn",
-    "altNames": [],
+    "name": "Bahrain",
+    "altNames": [
+      "Bahreïn"
+    ],
     "iso2": "BH",
     "iso3": "BHR",
     "capital": "Manama",
@@ -3127,8 +3518,10 @@
   {
     "id": "BT-975",
     "order": 234,
-    "name": "Bhoutan",
-    "altNames": [],
+    "name": "Bhutan",
+    "altNames": [
+      "Bhoutan"
+    ],
     "iso2": "BT",
     "iso3": "BTN",
     "capital": "Thimphu",
@@ -3140,12 +3533,16 @@
   {
     "id": "MN-976",
     "order": 235,
-    "name": "Mongolie",
-    "altNames": [],
+    "name": "Mongolia",
+    "altNames": [
+      "Mongolie"
+    ],
     "iso2": "MN",
     "iso3": "MNG",
-    "capital": "Ulan Bator",
-    "altCapitals": [],
+    "capital": "Ulaanbaatar",
+    "altCapitals": [
+      "Ulan Bator"
+    ],
     "indicatif": "976",
     "currency": "MNT",
     "currencyName": "Tugrik mongol"
@@ -3153,8 +3550,10 @@
   {
     "id": "NP-977",
     "order": 236,
-    "name": "Népal",
-    "altNames": [],
+    "name": "Nepal",
+    "altNames": [
+      "Népal"
+    ],
     "iso2": "NP",
     "iso3": "NPL",
     "capital": "Kathmandu",
@@ -3170,8 +3569,10 @@
     "altNames": [],
     "iso2": "IR",
     "iso3": "IRN",
-    "capital": "Téhéran",
-    "altCapitals": [],
+    "capital": "Tehran",
+    "altCapitals": [
+      "Téhéran"
+    ],
     "indicatif": "98",
     "currency": "IRR",
     "currencyName": "Riyal iranien"
@@ -3179,8 +3580,10 @@
   {
     "id": "TJ-992",
     "order": 238,
-    "name": "Tadjikistan",
-    "altNames": [],
+    "name": "Tajikistan",
+    "altNames": [
+      "Tadjikistan"
+    ],
     "iso2": "TJ",
     "iso3": "TJK",
     "capital": "Dushanbe",
@@ -3192,8 +3595,10 @@
   {
     "id": "TM-993",
     "order": 239,
-    "name": "Turkménistan",
-    "altNames": [],
+    "name": "Turkmenistan",
+    "altNames": [
+      "Turkménistan"
+    ],
     "iso2": "TM",
     "iso3": "TKM",
     "capital": "Ashgabat",
@@ -3205,12 +3610,16 @@
   {
     "id": "AZ-994",
     "order": 240,
-    "name": "Azerbaïdjan",
-    "altNames": [],
+    "name": "Azerbaijan",
+    "altNames": [
+      "Azerbaïdjan"
+    ],
     "iso2": "AZ",
     "iso3": "AZE",
-    "capital": "Bakou",
-    "altCapitals": [],
+    "capital": "Baku",
+    "altCapitals": [
+      "Bakou"
+    ],
     "indicatif": "994",
     "currency": "AZN",
     "currencyName": "Manat azéri"
@@ -3218,12 +3627,16 @@
   {
     "id": "GE-995",
     "order": 241,
-    "name": "Géorgie",
-    "altNames": [],
+    "name": "Georgia",
+    "altNames": [
+      "Géorgie"
+    ],
     "iso2": "GE",
     "iso3": "GEO",
-    "capital": "Tbilissi",
-    "altCapitals": [],
+    "capital": "Tbilisi",
+    "altCapitals": [
+      "Tbilissi"
+    ],
     "indicatif": "995",
     "currency": "GEL",
     "currencyName": "Lari géorgien"
@@ -3231,8 +3644,10 @@
   {
     "id": "KG-996",
     "order": 242,
-    "name": "Kirghizistan",
-    "altNames": [],
+    "name": "Kyrgyzstan",
+    "altNames": [
+      "Kirghizistan"
+    ],
     "iso2": "KG",
     "iso3": "KGZ",
     "capital": "Bishkek",
@@ -3244,8 +3659,10 @@
   {
     "id": "UZ-998",
     "order": 243,
-    "name": "Ouzbékistan",
-    "altNames": [],
+    "name": "Uzbekistan",
+    "altNames": [
+      "Ouzbékistan"
+    ],
     "iso2": "UZ",
     "iso3": "UZB",
     "capital": "Tashkent",

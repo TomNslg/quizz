@@ -5,17 +5,17 @@
     : [];
 
   const DIMS = [
-    { id: "name", label: "Pays" },
-    { id: "capital", label: "Capitale" },
+    { id: "name", label: "Country" },
+    { id: "capital", label: "Capital" },
     { id: "iso2", label: "ISO 2" },
     { id: "iso3", label: "ISO 3" },
-    { id: "indicatif", label: "Indicatif" },
-    { id: "currency", label: "Devise" },
+    { id: "indicatif", label: "Dialing code" },
+    { id: "currency", label: "Currency" },
   ];
 
   const MEMORY_DIMS = [
-    { id: "name", label: "Pays" },
-    { id: "capital", label: "Capitales" },
+    { id: "name", label: "Countries" },
+    { id: "capital", label: "Capitals" },
   ];
 
   function dimLabel(id) {
@@ -38,7 +38,7 @@
       id: `memory-${field}`,
       mode: "memory",
       field,
-      title: field === "name" ? "Tous les pays" : "Toutes les capitales",
+      title: field === "name" ? "All countries" : "All capitals",
     };
   }
 
@@ -79,55 +79,73 @@
   }
 
   const COUNTRY_SHORT = {
-    "États-Unis": ["usa", "us", "etats unis", "america"],
-    "Royaume-Uni": ["uk", "gb", "angleterre", "grande bretagne"],
-    "République tchèque": ["tcheque", "czechia"],
-    "Sao Tomé-et-Principe": ["sao tome", "sao tome principe"],
-    "Émirats arabes unis": ["eau", "emirats", "uae"],
-    "République dominicaine": ["dominicaine"],
-    "République centrafricaine": ["centrafrique", "rca"],
-    "République du Congo": ["congo brazzaville", "congo"],
-    "RD Congo": ["rdc", "congo kinshasa", "congo"],
-    "Bosnie-Herzégovine": ["bosnie"],
-    "Macédoine du Nord": ["macedoine"],
-    "Papouasie-Nouvelle-Guinée": ["papouasie", "png"],
-    "Trinité-et-Tobago": ["trinite", "trinidad"],
-    "Antigua-et-Barbuda": ["antigua"],
-    "Saint-Vincent-et-Grenadines": ["saint vincent"],
-    "Saint-Kitts-et-Nevis": ["saint kitts", "saint christophe"],
-    "Saint-Christophe-et-Niévès": ["saint kitts", "saint christophe"],
-    "Sainte-Lucie": ["sainte lucie"],
-    "Cap-Vert": ["cap vert", "cabo verde"],
-    "Côte d'Ivoire": ["cote divoire", "ivoire"],
-    "Guinée équatoriale": ["guinee equa"],
-    "Guinée-Bissau": ["guinee bissau"],
-    "Soudan du Sud": ["sud soudan"],
-    "Corée du Sud": ["coree sud", "sud coree"],
-    "Corée du Nord": ["coree nord", "nord coree"],
-    "Timor oriental": ["timor", "timor leste"],
-    "Cité du Vatican": ["vatican"],
-    "La Réunion / Mayotte": ["reunion", "mayotte", "la reunion"],
-    "Terres australes et antarctiques françaises": ["taaf", "terres australes"],
-    "Géorgie du Sud-et-les îles Sandwich du Sud": ["georgie du sud"],
-    "Îles Vierges britanniques": ["vierges britanniques", "bvi"],
-    "Îles Vierges des États-Unis": ["vierges americaines", "usvi"],
-    "États fédérés de Micronésie": ["micronesie", "fsm"],
-    "Biélorussie": ["belarus", "belaru"],
-    "Birmanie": ["myanmar"],
+    "United States": ["usa", "us", "etats unis", "etats-unis", "america"],
+    "United Kingdom": ["uk", "gb", "angleterre", "grande bretagne", "royaume uni"],
+    "Czech Republic": ["tcheque", "czechia", "republique tcheque"],
+    "Sao Tome and Principe": ["sao tome", "sao tome et principe", "sao tome principe"],
+    "United Arab Emirates": ["eau", "emirats", "uae", "emirats arabes unis"],
+    "Dominican Republic": ["dominicaine", "republique dominicaine"],
+    "Central African Republic": ["centrafrique", "rca"],
+    "Republic of the Congo": ["congo brazzaville", "congo"],
+    "Democratic Republic of the Congo": ["rdc", "rd congo", "congo kinshasa", "congo"],
+    "Bosnia and Herzegovina": ["bosnie", "bosnie herzegovine"],
+    "North Macedonia": ["macedoine", "macedoine du nord"],
+    "Papua New Guinea": ["papouasie", "png"],
+    "Trinidad and Tobago": ["trinite", "trinidad"],
+    "Antigua and Barbuda": ["antigua"],
+    "Saint Vincent and the Grenadines": ["saint vincent"],
+    "Saint Kitts and Nevis": ["saint kitts", "saint christophe"],
+    "Saint Lucia": ["sainte lucie"],
+    "Cape Verde": ["cap vert", "cabo verde"],
+    "Ivory Coast": ["cote divoire", "cote d ivoire", "ivoire"],
+    "Equatorial Guinea": ["guinee equa", "guinee equatoriale"],
+    "Guinea-Bissau": ["guinee bissau"],
+    "South Sudan": ["sud soudan", "soudan du sud"],
+    "South Korea": ["coree sud", "coree du sud", "sud coree"],
+    "North Korea": ["coree nord", "coree du nord", "nord coree"],
+    "East Timor": ["timor", "timor leste", "timor oriental"],
+    "Vatican City": ["vatican", "cite du vatican"],
+    "Réunion / Mayotte": ["reunion", "mayotte", "la reunion"],
+    "French Southern and Antarctic Lands": ["taaf", "terres australes"],
+    "South Georgia and the South Sandwich Islands": ["georgie du sud"],
+    "British Virgin Islands": ["vierges britanniques", "bvi"],
+    "United States Virgin Islands": ["vierges americaines", "usvi"],
+    "Federated States of Micronesia": ["micronesie", "fsm"],
+    "Belarus": ["bielorussie", "belaru"],
+    "Myanmar": ["birmanie"],
     "Eswatini": ["swaziland"],
+    "South Africa": ["afrique du sud"],
+    "Falkland Islands": ["malouines", "iles malouines"],
   };
 
   const CAPITAL_SHORT = {
     Washington: ["washington dc", "dc"],
-    "Andorre-la-Vieille": ["andorre"],
-    "La Valette": ["valette"],
-    "Port-d'Espagne": ["port despagne"],
-    "Saint-Domingue": ["saint domingue"],
+    Pretoria: ["cape town", "bloemfontein", "le cap"],
+    "Andorra la Vella": ["andorre", "andorre la vielle", "andorre-la-vieille"],
+    Valletta: ["valette", "la valette"],
+    "Port of Spain": ["port despagne", "port-d'espagne"],
+    "Santo Domingo": ["saint domingue"],
     "New Delhi": ["delhi"],
-    "Abou Dabi": ["abu dhabi", "abou dhabi"],
-    "Ulan Bator": ["oulan bator"],
+    "Abu Dhabi": ["abou dabi", "abu dhabi"],
+    Ulaanbaatar: ["ulan bator", "oulan bator"],
     Kyiv: ["kiev"],
-    "Mexico": ["mexico city"],
+    "Mexico City": ["mexico", "mexico df"],
+    Beijing: ["pekin"],
+    Cairo: ["le caire"],
+    Brussels: ["bruxelles"],
+    "The Hague": ["la haye"],
+    Lisbon: ["lisbonne"],
+    Rome: ["rome"],
+    Moscow: ["moscou"],
+    Warsaw: ["varsovie"],
+    Vienna: ["vienne"],
+    Prague: ["prague"],
+    Athens: ["athenes"],
+    Seoul: ["seoul"],
+    Hanoi: ["hanoi"],
+    Bern: ["berne"],
+    Bucharest: ["bucarest"],
+    Jerusalem: ["jerusalem"],
   };
 
   const state = {
@@ -556,8 +574,8 @@
     const sc = getScore(qaId);
     const pending = Array.isArray(sc.pendingIds) ? sc.pendingIds.length : 0;
     const metaParts = [];
-    if (sc.bestMs != null) metaParts.push(`meilleur ${formatMs(sc.bestMs)}`);
-    if (pending) metaParts.push(`${pending} à revoir`);
+    if (sc.bestMs != null) metaParts.push(`best ${formatMs(sc.bestMs)}`);
+    if (pending) metaParts.push(`${pending} to retry`);
 
     const root = el(`<div></div>`);
     root.innerHTML = `
@@ -568,7 +586,7 @@
       <section class="home-card">
         <div class="picker-row">
           <label class="picker">
-            <span class="picker-label">De</span>
+            <span class="picker-label">From</span>
             <select data-from>${selectOptions(state.pickFrom, DIMS)}</select>
           </label>
           <label class="picker">
@@ -582,7 +600,7 @@
 
       <section class="home-card memory-card">
         <div class="memory-row">
-          <div class="memory-title">Mémorise-les tous</div>
+          <div class="memory-title">Memorize them all</div>
           <label class="picker memory-picker">
             <select data-memory>${selectOptions(state.pickMemory, MEMORY_DIMS)}</select>
           </label>
@@ -592,9 +610,9 @@
 
       <div class="home-foot">
         <button type="button" class="ghost-btn" data-go="token">
-          ${hasTok ? "Modifier le jeton" : "Jeton sync"}
+          ${hasTok ? "Change token" : "Sync token"}
         </button>
-        <p class="sync-pill">${syncOn && !hasTok ? "Optionnel — sync entre appareils." : ""}</p>
+        <p class="sync-pill">${syncOn && !hasTok ? "Optional — sync across devices." : ""}</p>
       </div>
     `;
 
@@ -607,8 +625,8 @@
       const score = getScore(id);
       const p = Array.isArray(score.pendingIds) ? score.pendingIds.length : 0;
       const parts = [];
-      if (score.bestMs != null) parts.push(`meilleur ${formatMs(score.bestMs)}`);
-      if (p) parts.push(`${p} à revoir`);
+      if (score.bestMs != null) parts.push(`best ${formatMs(score.bestMs)}`);
+      if (p) parts.push(`${p} to retry`);
       root.querySelector(".picker-meta").textContent = parts.join(" · ");
     }
 
@@ -667,19 +685,19 @@
     const root = el(`<div class="anim-rise"></div>`);
     root.innerHTML = `
       <div class="top">
-        <button type="button" class="back" data-back aria-label="Retour">←</button>
-        <h1 class="view-title">Jeton sync</h1>
+        <button type="button" class="back" data-back aria-label="Back">←</button>
+        <h1 class="view-title">Sync token</h1>
       </div>
       <div class="panel">
-        <h2>Jeton GitHub</h2>
-        <p>Jeton fine-grained limité à <strong>TomNslg/quizz</strong>, permission Contents en lecture/écriture. Stocké dans le localStorage de l’appareil.</p>
+        <h2>GitHub token</h2>
+        <p>Fine-grained token limited to <strong>TomNslg/quizz</strong>, Contents read/write. Stored in this device’s localStorage.</p>
         <input class="token-input" type="password" autocomplete="off" spellcheck="false"
           placeholder="github_pat_…" data-token />
         <div class="btn-row">
-          <button type="button" class="btn btn-primary" data-save>Enregistrer le jeton</button>
+          <button type="button" class="btn btn-primary" data-save>Save token</button>
         </div>
         <div class="btn-row">
-          <button type="button" class="btn btn-secondary" data-clear>Effacer</button>
+          <button type="button" class="btn btn-secondary" data-clear>Clear</button>
         </div>
         <p class="status-msg ${state.tokenOk === true ? "ok" : state.tokenOk === false ? "bad" : ""}" data-status></p>
       </div>
@@ -700,11 +718,11 @@
       const status = root.querySelector("[data-status]");
       try {
         window.QuizzSync.setToken(state.tokenDraft);
-        status.textContent = "Test d’écriture…";
+        status.textContent = "Write test…";
         status.className = "status-msg";
         await window.QuizzSync.testWrite();
         state.tokenOk = true;
-        state.tokenStatus = "Jeton OK — écriture réussie.";
+        state.tokenStatus = "Token OK — write succeeded.";
         status.textContent = state.tokenStatus;
         status.className = "status-msg ok";
       } catch (err) {
@@ -720,7 +738,7 @@
       state.tokenDraft = "";
       input.value = "";
       state.tokenOk = null;
-      root.querySelector("[data-status]").textContent = "Jeton effacé.";
+      root.querySelector("[data-status]").textContent = "Token cleared.";
       root.querySelector("[data-status]").className = "status-msg";
     });
 
@@ -749,10 +767,13 @@
     const ok = checkAnswer(def, item, session.input);
     session.answered = true;
     markQaResult(session, ok);
-    session.feedback = ok
-      ? { ok: true, text: "Correct !" }
-      : { ok: false, text: `Non — ${expectedDisplay(def, item)}` };
-    if (ok) session.correct += 1;
+    if (ok) {
+      session.correct += 1;
+      session.feedback = null;
+      nextQa(session);
+      return;
+    }
+    session.feedback = { ok: false, text: `Answer: ${expectedDisplay(def, item)}` };
     render();
   }
 
@@ -788,36 +809,36 @@
         session.correct === session.items.length &&
         sc.bestMs != null &&
         ms === sc.bestMs;
-      const root = el(`<div class="anim-rise results"></div>`);
+      const root = el(`<div class="results"></div>`);
       root.innerHTML = `
         <div class="top" style="justify-content:flex-start">
-          <button type="button" class="back" data-home aria-label="Accueil">←</button>
+          <button type="button" class="back" data-home aria-label="Home">←</button>
         </div>
-        <h2>${pending ? "Tour terminé" : "Terminé"}</h2>
-        <p class="score">${session.correct} / ${session.items.length} correct${session.correct > 1 ? "s" : ""}</p>
-        <p class="score-time">Temps : <strong>${escapeHtml(formatMs(ms))}</strong>${
-          isRecord ? " · record !" : ""
+        <h2>${pending ? "Round done" : "Done"}</h2>
+        <p class="score">${session.correct} / ${session.items.length} correct</p>
+        <p class="score-time">Time: ${escapeHtml(formatMs(ms))}${
+          isRecord ? " (best)" : ""
         }</p>
         ${
-          sc.bestMs != null
-            ? `<p class="score-best">Meilleur temps (série complète) : ${escapeHtml(formatMs(sc.bestMs))}</p>`
+          sc.bestMs != null && !isRecord
+            ? `<p class="score-best">Best: ${escapeHtml(formatMs(sc.bestMs))}</p>`
             : ""
         }
         ${
           pending
-            ? `<p class="score-pending">${pending} erreur${pending > 1 ? "s" : ""} — le prochain lancement ne rejouera que celles-ci.</p>`
+            ? `<p class="score-pending">${pending} to retry next time.</p>`
             : session.retryMode
-              ? `<p class="score-pending">Erreurs corrigées. Prochain lancement = série complète.</p>`
+              ? `<p class="score-pending">Errors cleared.</p>`
               : ""
         }
         <div class="btn-stack">
           ${
             pending
-              ? `<button type="button" class="btn btn-primary" data-retry>Revoir les erreurs</button>`
-              : `<button type="button" class="btn btn-primary" data-again>Rejouer</button>`
+              ? `<button type="button" class="btn btn-primary" data-retry>Retry errors</button>`
+              : `<button type="button" class="btn btn-primary" data-again>Play again</button>`
           }
-          <button type="button" class="btn btn-secondary" data-full>Toute la série</button>
-          <button type="button" class="btn btn-secondary" data-home2>Accueil</button>
+          <button type="button" class="btn btn-secondary" data-full>Full series</button>
+          <button type="button" class="btn btn-secondary" data-home2>Home</button>
         </div>
       `;
       const goHome = () => {
@@ -848,23 +869,23 @@
         : "bad anim-shake"
       : "";
 
-    const root = el(`<div></div>`);
+    const root = el(`<div class="quiz-screen"></div>`);
     root.innerHTML = `
       <div class="top">
-        <button type="button" class="back" data-back aria-label="Retour">←</button>
+        <button type="button" class="back" data-back aria-label="Back">←</button>
         <h1 class="view-title">${escapeHtml(def.title)}</h1>
         <span class="spacer"></span>
         <span class="timer-chip" data-timer>${escapeHtml(liveTimerText(session))}</span>
       </div>
       ${
         session.retryMode
-          ? `<p class="retry-banner">${session.items.length} erreur${session.items.length > 1 ? "s" : ""}</p>`
+          ? `<p class="retry-banner">${session.items.length} error${session.items.length > 1 ? "s" : ""}</p>`
           : ""
       }
       <div class="progress-bar"><i style="width:${pct}%"></i></div>
       <div class="stats-row">
         <span>${session.index + 1} / ${session.items.length}</span>
-        <span>${session.correct} juste${session.correct > 1 ? "s" : ""}</span>
+        <span>${session.correct} correct</span>
       </div>
       <div class="prompt-block">
         <p class="prompt-label">${escapeHtml(promptLabel)}</p>
@@ -874,14 +895,11 @@
       <p class="feedback ${session.feedback ? (session.feedback.ok ? "ok" : "bad") : ""}" data-fb>
         ${session.feedback ? escapeHtml(session.feedback.text) : ""}
       </p>
-      <div class="btn-row">
-        ${
-          session.answered
-            ? `<button type="button" class="btn btn-primary" data-next>Suivant</button>`
-            : `<button type="button" class="btn btn-primary" data-ok>Valider</button>
-               <button type="button" class="btn btn-secondary" data-skip>Passer</button>`
-        }
-      </div>
+      ${
+        session.answered
+          ? `<div class="next-dock"><button type="button" class="btn btn-primary btn-next" data-next>Next</button></div>`
+          : `<div class="btn-row"><button type="button" class="btn btn-secondary btn-skip" data-skip>Skip</button></div>`
+      }
     `;
 
     const wrap = root.querySelector("[data-answer-wrap]");
@@ -894,21 +912,25 @@
         <div class="phone-pad" data-pad></div>
       `;
       const pad = wrap.querySelector("[data-pad]");
-      const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "⌫"];
+      const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "✓", "0", "⌫"];
       keys.forEach((k) => {
-        if (k === "") {
-          pad.appendChild(el(`<span class="pad-key empty"></span>`));
-          return;
-        }
         const btn = el(
-          `<button type="button" class="pad-key ${k === "⌫" ? "action" : ""}">${k}</button>`,
+          `<button type="button" class="pad-key ${
+            k === "⌫" || k === "✓" ? "action" : ""
+          }">${k}</button>`,
         );
         btn.disabled = session.answered;
         btn.addEventListener("click", () => {
           if (session.answered) return;
-          if (k === "⌫") session.input = session.input.slice(0, -1);
-          else session.input += k;
-          wrap.querySelector("[data-digits]").textContent = session.input;
+          if (k === "⌫") {
+            session.input = session.input.slice(0, -1);
+            wrap.querySelector("[data-digits]").textContent = session.input;
+          } else if (k === "✓") {
+            submitQa(session);
+          } else {
+            session.input += k;
+            wrap.querySelector("[data-digits]").textContent = session.input;
+          }
         });
         pad.appendChild(btn);
       });
@@ -946,8 +968,6 @@
       render();
     });
 
-    const okBtn = root.querySelector("[data-ok]");
-    if (okBtn) okBtn.addEventListener("click", () => submitQa(session));
     const skipBtn = root.querySelector("[data-skip]");
     if (skipBtn) {
       skipBtn.addEventListener("click", () => {
@@ -956,7 +976,7 @@
         markQaResult(session, false);
         session.feedback = {
           ok: false,
-          text: `Réponse : ${expectedDisplay(def, item)}`,
+          text: `Answer: ${expectedDisplay(def, item)}`,
         };
         render();
       });
@@ -966,6 +986,24 @@
 
     app.replaceChildren(root);
     startTimerUi(root);
+    focusAnswer(root, session);
+  }
+
+  function focusAnswer(root, session) {
+    if (!session || session.answered || session.done) return;
+    const input = root.querySelector("[data-input]");
+    if (!input) return;
+    const focus = () => {
+      try {
+        input.focus({ preventScroll: true });
+      } catch {
+        input.focus();
+      }
+    };
+    focus();
+    requestAnimationFrame(focus);
+    setTimeout(focus, 50);
+    setTimeout(focus, 200);
   }
 
   function tryMemoryAnswer(session) {
@@ -1011,7 +1049,7 @@
         saveDb(db);
       }
     } else {
-      session.feedback = { ok: false, text: "Pas dans la liste restante." };
+      session.feedback = { ok: false, text: "Not in the remaining list." };
     }
     render();
   }
@@ -1019,7 +1057,7 @@
   function renderMemory() {
     const session = state.session;
     const def = session.def;
-    const colLabel = def.field === "name" ? "Pays" : "Capitale";
+    const colLabel = def.field === "name" ? "Country" : "Capital";
     const sc = getScore(def.id);
 
     const root = el(`<div class="anim-rise"></div>`);
@@ -1029,21 +1067,21 @@
       const ms = elapsedMs(session);
       root.innerHTML = `
         <div class="top">
-          <button type="button" class="back" data-home aria-label="Accueil">←</button>
+          <button type="button" class="back" data-home aria-label="Home">←</button>
           <h1 class="view-title">${escapeHtml(def.title)}</h1>
         </div>
         <div class="results">
-          <h2>Table complète</h2>
+          <h2>Complete</h2>
           <p class="score">${session.total} / ${session.total}</p>
-          <p class="score-time">Temps : <strong>${escapeHtml(formatMs(ms))}</strong></p>
+          <p class="score-time">Time: ${escapeHtml(formatMs(ms))}</p>
           ${
             sc.bestMs != null
-              ? `<p class="score-best">Meilleur temps : ${escapeHtml(formatMs(sc.bestMs))}</p>`
+              ? `<p class="score-best">Best: ${escapeHtml(formatMs(sc.bestMs))}</p>`
               : ""
           }
           <div class="btn-row">
-            <button type="button" class="btn btn-primary" data-again>Rejouer</button>
-            <button type="button" class="btn btn-secondary" data-home2>Accueil</button>
+            <button type="button" class="btn btn-primary" data-again>Play again</button>
+            <button type="button" class="btn btn-secondary" data-home2>Home</button>
           </div>
         </div>
       `;
@@ -1071,16 +1109,16 @@
 
     root.innerHTML = `
       <div class="top">
-        <button type="button" class="back" data-back aria-label="Retour">←</button>
+        <button type="button" class="back" data-back aria-label="Back">←</button>
         <h1 class="view-title">${escapeHtml(def.title)}</h1>
         <span class="spacer"></span>
         <span class="timer-chip" data-timer>${escapeHtml(liveTimerText(session))}</span>
       </div>
       <div class="memory-stats">
         <span>${session.found} / ${session.total}</span>
-        <span>ordre indicatif</span>
+        <span>dialing order</span>
       </div>
-      <p class="memory-hint">Tapez un nom ; une bonne réponse s’ajoute à la table (ordre du PDF).</p>
+      <p class="memory-hint">Type a name; correct answers fill the table (dialing-code order).</p>
       <div class="memory-table-wrap">
         <table class="memory-table">
           <thead><tr><th>#</th><th>${escapeHtml(colLabel)}</th></tr></thead>
@@ -1091,14 +1129,14 @@
         <input class="answer-input" type="text" enterkeyhint="done"
           autocomplete="off" autocorrect="off" spellcheck="false"
           autocapitalize="words" placeholder="${
-            def.field === "name" ? "Nom du pays" : "Nom de la capitale"
+            def.field === "name" ? "Country name" : "Capital name"
           }" data-input />
       </div>
       <p class="feedback ${session.feedback ? (session.feedback.ok ? "ok" : "bad") : ""}">
         ${session.feedback ? escapeHtml(session.feedback.text) : ""}
       </p>
       <div class="btn-row">
-        <button type="button" class="btn btn-primary" data-ok>Ajouter</button>
+        <button type="button" class="btn btn-primary" data-ok>Add</button>
       </div>
     `;
 
@@ -1138,7 +1176,7 @@
 
   if (window.QuizzSync) window.QuizzSync.init();
   if (!COUNTRIES.length) {
-    app.innerHTML = `<p class="tagline">Données manquantes.</p>`;
+    app.innerHTML = `<p class="tagline">Data missing.</p>`;
     return;
   }
   render();
