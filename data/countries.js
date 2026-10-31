@@ -3287,8 +3287,14 @@ window.QUIZZ_COUNTRIES = [
     "altNames": [],
     "iso2": "LK",
     "iso3": "LKA",
-    "capital": "Colombo",
-    "altCapitals": [],
+    "capital": "Sri Jayawardenepura Kotte",
+    "altCapitals": [
+      "Sri Jayawardenepura Kotte (legislative)",
+      "Kotte",
+      "Colombo",
+      "Colombo (commercial)",
+      "Colombo (de facto)"
+    ],
     "indicatif": "94",
     "currency": "LKR",
     "currencyName": "Roupie srilankaise"
