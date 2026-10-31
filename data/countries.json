@@ -3126,10 +3126,8 @@
     "altNames": [],
     "iso2": "HK",
     "iso3": "HKG",
-    "capital": "Victoria",
-    "altCapitals": [
-      "City of Victoria"
-    ],
+    "capital": null,
+    "altCapitals": [],
     "indicatif": "852",
     "currency": "HKD",
     "currencyName": "Dollar de Hong Kong"
