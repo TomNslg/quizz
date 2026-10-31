@@ -3455,8 +3455,13 @@ window.QUIZZ_COUNTRIES = [
     "altNames": [],
     "iso2": "PS",
     "iso3": "PSE",
-    "capital": "Ramallah",
-    "altCapitals": [],
+    "capital": "Jerusalem (de jure)",
+    "altCapitals": [
+      "Jerusalem",
+      "Jérusalem",
+      "Ramallah",
+      "Ramallah (de facto)"
+    ],
     "indicatif": "970",
     "currency": "EGP",
     "currencyName": "Livre"
